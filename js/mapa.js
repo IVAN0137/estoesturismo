@@ -34,22 +34,21 @@ var markers = [
     { coords: [21.134877, -99.627899], name: 'CASA DEL ESTUDIANTE PEÑAMILLER-PINAL', popup: '<a href="pinal.html"><b>CASA DEL ESTUDIANTE PEÑAMILLER-PINAL</b><br><img src="res/pinal/casaestudiante.png" alt="Mirador Pinal" width="150" height="100"></a>' },
     // Jalpan de Serra     
     { coords: [21.217321, -99.473034], name: 'JALPAN DE SERRA', popup: '<a href="jalpan.html"><b>JALPAN DE SERRA</b><br><img src="res/jalpan/jalpan.jpg" alt="Jalpan De serra" width="150" height="100"></a>' },
-    { coords: [21.216758, -99.473858], name: 'MISIÓN DE SANTIAGO', popup: '<a href="jalpan.html"><b>MISIÓN DE SANTIAGO</b><br><img src="res/" alt="Jalpan" width="150" height="100"></a>' },
-    { coords: [21.20622, -99.47230], name: 'PRESA JALPAN', popup: '<a href="jalpan.html"><b>PRESA JALPAN</b><br><img src="res/" alt="Presa Jalpan" width="150" height="100"></a>' },
-    { coords: [21.217263, -99.472253], name: 'ANDADOR EL SALTO', popup: '<a href="jalpan.html"><b>ANDADOR EL SALTO</b><br><img src="res/" alt="Andador El Salto" width="150" height="100"></a>' },
-    { coords: [21.217768, -99.473729], name: 'MUSEO HISTORICO DE LA SIERRA GORDA', popup: '<a href="jalpan.html"><b>MUSEO HISTORICO DE LA SIERRA GORDA</b><br><img src="res/" alt="Museo Historico De La Sierra Gorda" width="150" height="100"></a>' },
+    { coords: [21.216758, -99.473858], name: 'MISIÓN DE SANTIAGO', popup: '<a href="jalpan.html"><b>MISIÓN DE SANTIAGO</b><br><img src="res/jalpan/santiago.jpg" alt="Jalpan" width="150" height="100"></a>' },
+    { coords: [21.20622, -99.47230], name: 'PRESA JALPAN', popup: '<a href="jalpan.html"><b>PRESA JALPAN</b><br><img src="res/jalpan/presa.jpg" alt="Presa Jalpan" width="150" height="100"></a>' },
+        { coords: [21.217768, -99.473729], name: 'MUSEO HISTORICO DE LA SIERRA GORDA', popup: '<a href="jalpan.html"><b>MUSEO HISTORICO DE LA SIERRA GORDA</b><br><img src="res/jalpan/museoj.jpg" alt="Museo Historico De La Sierra Gorda" width="150" height="100"></a>' },
     //landa de matamoros
-    { coords: [21.18390, -99.32157], name: 'LANDA DE MATAMOROS', popup: '<a href="landa.html"><b>LANDA DE MARAMOROS</b><br><img src="res/landa-de-matamoros.jpg" alt="Landa de Matamoros" width="150" height="100"></a>' },
+    { coords: [21.18390, -99.32157], name: 'LANDA DE MATAMOROS', popup: '<a href="landa.html"><b>LANDA DE MARAMOROS</b><br><img src="res/landa/landa.jpg" alt="Landa de Matamoros" width="150" height="100"></a>' },
     { coords: [21.244180, -99.122727], name: 'LAS POSAS DEL RÍO VERDITO', popup:'<a href="landa.html"><b> LAS POSAS DEL RÍO VERDITO</b><br><img src="res/landa/rioverdito.jpg" alt="rio verdito" width="150" height="100"></a>' },
     { coords: [21.278347, -99.150713], name: 'EL MADROÑO, LANDA DE MATAMOROS', popup:'<a href="landa.html"><b>EL MADROÑO, LANDA DE MATAMOROS </b><br><img src="res/landa/madrono.jpg" alt="" width="150" height="100"></a>' },
-    { coords: [21.163825, -99.191410], name: 'MISION DE SAN FRANSICO DE ASÍS DEL VALE DE TILACO', popup:'<a href="landa.html"><b>MISION DE SAN FRANSICO DE ASÍS DEL VALE DE TILACO</b><br><img src="res/landa/" alt="" width="150" height="100"></a>' },
-    { coords: [21.268146966410278, -99.16365092394435], name: 'RODEO ECOTURISMO', popup:'<a href="landa.html"><b>RODEO ECOTURISMO</b><br><img src="res/landa/" alt="" width="150" height="100"></a>' },
+    { coords: [21.163825, -99.191410], name: 'MISION DE SAN FRANSICO DE ASÍS DEL VALE DE TILACO', popup:'<a href="landa.html"><b>MISION DE SAN FRANSICO DE ASÍS DEL VALE DE TILACO</b><br><img src="res/landa/tilaco.jpg" alt="" width="150" height="100"></a>' },
+    { coords: [21.268146966410278, -99.16365092394435], name: 'RODEO ECOTURISMO', popup:'<a href="landa.html"><b>RODEO ECOTURISMO</b><br><img src="res/landa/eco.jpg" alt="" width="150" height="100"></a>' },
     //xlitla
     { coords: [21.38647, -98.99201], name: 'XILITLA', popup:'<a href="xilitla.html"><b>XILITLA</b><br><img src="res/xilitla/xilitapaisaje.jpg" alt="xilitla" width="150" height="100"></a>' },
     { coords: [21.397589, -98.996505], name: 'JARDIN SURREALISTA DE EDWARD JAMES', popup: '<a href="xilitla.html"><b>JARDIN SURREALISTA DE EDWARD JAMES</b><br><img src="res/xilitla/jardinedward.jpg" alt="jardin de edward james" width="150" height="100"></a>' },
     { coords: [21.385611, -98.989609], name: 'EX CONVENTO SAN AGUSTIN', popup:'<a href="xilitla.html"><b>EXCONVENTO SAN AGUSTIN</b><br><img src="res/xilitla/sanagustin.jpg" alt="jardin de edward james" width="150" height="100"></a>' },
-    { coords: [21.395466, -98.997223], name: 'CASCADA DE LOS COMALES', popup:'<a href="xilitla.html"><b>CASCADA DE LOS COMALES</b><br><img src="res/xilitla/" alt="cascada de los comales" width="150" height="100"></a>' },
-    { coords: [21.387055, -98.981844], name: 'CUEVA DEL SALITRE', popup:'<a href="xilitla.html"><b>CUEVA DEL SALITRE</b><br><img src="res/xilitla/" alt="cueva del salitre" width="150" height="100"></a>' },
+    { coords: [21.395466, -98.997223], name: 'CASCADA DE LOS COMALES', popup:'<a href="xilitla.html"><b>CASCADA DE LOS COMALES</b><br><img src="res/xilitla/comales.png" alt="cascada de los comales" width="150" height="100"></a>' },
+    { coords: [21.387055, -98.981844], name: 'CUEVA DEL SALITRE', popup:'<a href="xilitla.html"><b>CUEVA DEL SALITRE</b><br><img src="res/xilitla/salitre.jpg" alt="cueva del salitre" width="150" height="100"></a>' },
 
 ];
 
