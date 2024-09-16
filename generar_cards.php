@@ -1,6 +1,6 @@
 <?php
 $host = 'sql210.infinityfree.com';
-$db = 'guias';
+$db = 'if0_37315282_guia_turistica';
 $user = 'if0_37315282';
 $pass = 'MAGI020601';
 
