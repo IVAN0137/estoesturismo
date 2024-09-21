@@ -1,143 +1,130 @@
-/* Reseteo de márgenes y rellenos para todos los elementos */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
 }
-
-/* Estilos del cuerpo de la página */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    overflow: hidden; /* Evita scrollbars por el fondo animado */
-    display: flex; /* Utiliza flexbox para centrar el contenido */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    height: 100vh; /* Ocupa toda la altura de la ventana */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
 }
-
-/* Sección de fondo animado */
 section {
     position: absolute;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    background: #3586ff;
+    display: flex;
+    flex-wrap: wrap;
     overflow: hidden;
 }
-
-/* Elementos de olas animadas */
-section .air {
+section::before {
+    content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    height: 100px;
-    background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
-    background-size: 1000px 100px;
+    height: 100%;
+    background: linear-gradient(#000, #0f0, #000);
+    animation: animate 5s linear infinite;
 }
-
-/* Animaciones de olas */
-section .air.air1 {
-    animation: wave 30s linear infinite;
-    z-index: 1000;
-    opacity: 1;
-    animation-delay: 0s;
-    bottom: 0;
+@keyframes animate {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
 }
-
-section .air.air2 {
-    animation: wave2 15s linear infinite;
-    z-index: 999;
-    opacity: 0.5;
-    animation-delay: -5s;
-    bottom: 10px;
+section span {
+    display: block;
+    width: 10vw; /* Cambia el tamaño según sea necesario */
+    height: 10vw; /* Cambia el tamaño según sea necesario */
+    background: #181818;
+    z-index: 2;
+    transition: 1.5s;
 }
-
-section .air.air3 {
-    animation: wave 30s linear infinite;
-    z-index: 998;
+section span:hover {
+    background: #0f0;
+    transition: 0s;
+}
+.air {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
     opacity: 0.2;
-    animation-delay: -2s;
-    bottom: 15px;
+    animation: float 10s linear infinite;
+}
+.air1 { background: rgba(255, 255, 255, 0.2); animation-duration: 12s; }
+.air2 { background: rgba(255, 255, 255, 0.3); animation-duration: 14s; }
+.air3 { background: rgba(255, 255, 255, 0.4); animation-duration: 16s; }
+.air4 { background: rgba(255, 255, 255, 0.5); animation-duration: 18s; }
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50px); }
 }
 
-section .air.air4 {
-    animation: wave2 5s linear infinite;
-    z-index: 997;
-    opacity: 0.7;
-    animation-delay: -5s;
-    bottom: 20px;
-}
-
-/* Definición de animación de ola hacia la derecha */
-@keyframes wave {
-    0% {
-        background-position-x: 0px; 
-    }
-    100% {
-        background-position-x: 1000px; 
-    }
-}
-
-/* Definición de animación de ola hacia la izquierda */
-@keyframes wave2 {
-    0% {
-        background-position-x: 0px; 
-    }
-    100% {
-        background-position-x: -1000px; 
-    }
-}
-
-/* Contenedor de inicio de sesión */
 .login-container {
-    background-color: white;
-    padding: 20px;
+    position: relative;
+    z-index: 1000;
+    background: #222;
+    padding: 40px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
-    position: relative; /* Asegura que el contenedor esté en primer plano */
-    z-index: 1001; /* Asegura que el contenedor esté sobre el fondo animado */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
 }
 
-/* Título del contenedor de inicio de sesión */
 h2 {
+    font-size: 2em;
+    color: #0f0;
+    text-align: center;
     margin-bottom: 20px;
 }
 
-/* Estilos de grupo de formulario */
 .form-group {
     margin-bottom: 15px;
-    text-align: left;
 }
 
-/* Etiquetas dentro del formulario */
 label {
+    color: #aaa;
     display: block;
     margin-bottom: 5px;
 }
 
-/* Campos de entrada del formulario */
-input {
+input[type="text"],
+input[type="password"] {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
+    padding: 15px;
+    border: none;
     border-radius: 4px;
+    background: #333;
+    color: #fff;
+    font-size: 1em;
 }
 
-/* Botón de envío */
 button {
-    width: 100%;
     padding: 10px;
+    width: 100%;
+    background: #0f0;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.2em;
     border: none;
-    background-color: #5cb85c;
-    color: white;
-    font-size: 16px;
     border-radius: 4px;
     cursor: pointer;
 }
 
-/* Efecto hover para el botón */
 button:hover {
-    background-color: #4cae4c;
+    opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+    section span {
+        width: 15vw;
+        height: 15vw;
+    }
+}
+
+@media (max-width: 600px) {
+    section span {
+        width: 20vw;
+        height: 20vw;
+    }
 }
