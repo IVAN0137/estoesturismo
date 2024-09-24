@@ -128,3 +128,57 @@ button:hover {
         height: 20vw;
     }
 }
+
+.container {
+    width: 100%;
+    max-width: 1200px; /* Máxima anchura para pantallas grandes */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 10px;
+}
+
+/* Estilos para el encabezado */
+header {
+    background: #005a87; /* Color de fondo */
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Navegación */
+nav ul {
+    list-style: none; /* Quitar viñetas */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Mostrar elementos en línea */
+    justify-content: center; /* Centrar los elementos */
+}
+
+nav ul li {
+    margin: 0 15px; /* Espaciado entre elementos */
+}
+
+nav ul li a {
+    text-decoration: none; /* Quitar subrayado de los enlaces */
+    color: white; /* Color del texto */
+    transition: color 0.3s ease; /* Transición suave */
+}
+
+nav ul li a:hover {
+    color: #ffcc00; /* Color al pasar el mouse */
+}
+
+nav ul li img {
+    width: 30px; /* Ancho de los iconos */
+    height: 30px; /* Alto de los iconos */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Espaciado vertical */
+    }
+}

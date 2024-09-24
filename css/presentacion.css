@@ -1,0 +1,235 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: linear-gradient(to right, #f4f4f4, #eaeaea);
+}
+
+/* Estilos del header */
+header {
+    background: #005a87;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 1s ease-in-out;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em; /* Tamaño de fuente grande para pantallas grandes */
+    animation: textShadowGlow 1.5s ease-in-out infinite alternate;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f4a300;
+    text-shadow: 0 0 10px #f4a300;
+}
+
+/* Estilos del contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Estilos de las secciones */
+main {
+    padding: 20px;
+}
+
+section {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+section:nth-child(odd) {
+    background: #eaeaea;
+}
+
+section h2 {
+    margin-top: 0;
+    color: #005a87;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.attraction {
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.attraction:hover {
+    transform: scale(1.05);
+}
+
+.attraction img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.attraction img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos del pie de página */
+footer {
+    background: #005a87;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textShadowGlow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #f4a300, 0 0 15px #f4a300, 0 0 20px #f4a300, 0 0 25px #f4a300, 0 0 30px #f4a300, 0 0 35px #f4a300;
+    }
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #f4a300, 0 0 30px #f4a300, 0 0 40px #f4a300, 0 0 50px #f4a300, 0 0 60px #f4a300, 0 0 70px #f4a300;
+    }
+}
+
+/* Estilos responsivos */
+@media (max-width: 1200px) {
+    header h1 {
+        font-size: 2.2em; /* Ajusta el tamaño de fuente para pantallas medianas */
+    }
+}
+
+@media (max-width: 992px) {
+    header h1 {
+        font-size: 2em; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 15px;
+        margin: 15px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em; /* Tamaño de fuente más pequeño para móviles */
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    .attraction img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    footer {
+        padding: 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.3em; /* Tamaño de fuente más pequeño para pantallas muy pequeñas */
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    section h2 {
+        font-size: 1.5em; /* Ajusta el tamaño de los encabezados de sección para móviles */
+    }
+
+    section {
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    footer {
+        padding: 10px 0;
+    }
+}
