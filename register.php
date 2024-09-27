@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Habilitar la visualización de errores para depuración
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -9,7 +14,6 @@ $dbUsername = "	if0_37315282"; // Cambia esto por tu usuario de MySQL
 $dbPassword = "MAGI020601"; // Cambia esto por tu contraseña de MySQL
 $dbName = "if0_37315282_login_system";
 
-<?php
 // Habilitar la visualización de errores para depuración
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
