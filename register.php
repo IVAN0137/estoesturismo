@@ -3,7 +3,7 @@
 $host = "sql210.infinityfree.com";
 $dbUsername = "	if0_37315282"; // Cambia esto por tu usuario de MySQL
 $dbPassword = "MAGI020601"; // Cambia esto por tu contraseña de MySQL
-$dbName = "login_system";
+$dbName = "if0_37315282_login_system";
 
 // Crear conexión
 $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
