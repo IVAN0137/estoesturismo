@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Registro</title>
+</head>
+<body>
+    <section>
+        <!-- Cuadrados que llenan la pantalla -->
+        <script>
+            for (let i = 0; i < 100; i++) { // Puedes ajustar la cantidad de cuadros
+                document.write('<span></span>');
+            }
+        </script>
+        <div class="air air1"></div>
+        <div class="air air2"></div>
+        <div class="air air3"></div>
+        <div class="air air4"></div>
+    </section>
+    <div class="login-container">
+    <h2>Registro de Usuario</h2>
+    <form action="CrearUsuario.php" method="POST">
+        <label for="username">Nombre de Usuario:</label>
+        <input type="text" name="username" required><br>
+        
+        <label for="password">Contraseña:</label>
+        <input type="password" name="password" required><br>
+        
+        <input type="submit" value="Registrar">
+    </form>
+
+</body>
+</html>

@@ -1,47 +1,49 @@
 <?php
-session_start();
-$servername = "sql210.infinityfree.com";
-$username = "if0_37315282";
-$password = "MAGI020601";
-$dbname = "if0_37315282_login_db";
+// Configuración de la conexión a la base de datos
+$host = "sql210.infinityfree.com";
+$dbUsername = "if0_37315282"; // Cambia esto por tu usuario de MySQL
+$dbPassword = "MAGI020601"; // Cambia esto por tu contraseña de MySQL
+$dbName = "login_system";
 
 // Crear conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
 
-// Comprobar conexión
+// Verificar la conexión
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Error en la conexión: " . $conn->connect_error);
 }
 
+// Procesar formulario de inicio de sesión
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Consulta preparada para evitar inyecciones SQL
-    $stmt = $conn->prepare("SELECT id, password FROM users WHERE username=?");
+    // Consultar usuario en la base de datos
+    $sql = "SELECT id, password FROM users WHERE username = ?";
+    $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->store_result();
-
+    
+    // Verificar si el usuario existe
     if ($stmt->num_rows > 0) {
-        // Recuperar la contraseña encriptada
-        $stmt->bind_result($user_id, $hashed_password);
+        $stmt->bind_result($id, $hashedPassword);
         $stmt->fetch();
-
-        // Verificar la contraseña
-        if (password_verify($password, $hashed_password)) {
-            // Autenticación exitosa
+        
+        // Verificar la contraseña con password_verify()
+        if (password_verify($password, $hashedPassword)) {
+            echo "Inicio de sesión exitoso. ¡Bienvenido, $username!";
+            // Aquí podrías iniciar una sesión o redirigir a otra página
+            session_start();
             $_SESSION['username'] = $username;
-            $_SESSION['user_id'] = $user_id;
-            header("Location: contactanos.html");
-            exit(); // Importante para detener la ejecución
+            header("Location: dashboard.php"); // Cambia 'dashboard.php' a la página deseada
+            exit();
         } else {
-            echo "Usuario o contraseña incorrectos.";
+            echo "Contraseña incorrecta.";
         }
     } else {
-        echo "Usuario o contraseña incorrectos.";
+        echo "Usuario no encontrado.";
     }
-
     $stmt->close();
 }
 
