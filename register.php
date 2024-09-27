@@ -1,9 +1,25 @@
 <?php
+// Habilitar la visualización de errores para depuración
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 // Configuración de la conexión a la base de datos
 $host = "sql210.infinityfree.com";
 $dbUsername = "	if0_37315282"; // Cambia esto por tu usuario de MySQL
 $dbPassword = "MAGI020601"; // Cambia esto por tu contraseña de MySQL
 $dbName = "if0_37315282_login_system";
+
+<?php
+// Habilitar la visualización de errores para depuración
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Configuración de la conexión a la base de datos
+$host = "localhost";
+$dbUsername = "root"; // Cambia esto por tu usuario de MySQL
+$dbPassword = ""; // Cambia esto por tu contraseña de MySQL
+$dbName = "login_system";
 
 // Crear conexión
 $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
@@ -21,6 +37,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verificar si el usuario ya existe
     $sql = "SELECT id FROM users WHERE username = ?";
     $stmt = $conn->prepare($sql);
+    if ($stmt === false) {
+        die('Error en la consulta SQL: ' . $conn->error);
+    }
+    
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->store_result();
@@ -34,6 +54,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Insertar nuevo usuario con sentencia preparada
         $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
         $stmt = $conn->prepare($sql);
+        if ($stmt === false) {
+            die('Error en la consulta SQL: ' . $conn->error);
+        }
+        
         $stmt->bind_param("ss", $username, $hashedPassword);
         
         if ($stmt->execute()) {
