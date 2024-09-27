@@ -37,7 +37,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("ss", $username, $hashedPassword);
         
         if ($stmt->execute()) {
-            echo "Registro exitoso. Ahora puedes <a href='login.html'>iniciar sesión</a>.";
+            // Redirigir al login una vez registrado
+            header("Location: login.html");
+            exit(); // Es importante salir después de header() para evitar que se ejecute más código
         } else {
             echo "Error al registrar el usuario.";
         }
