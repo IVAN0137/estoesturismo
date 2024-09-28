@@ -224,6 +224,7 @@ h2:hover {
     transition: transform 0.5s ease, box-shadow 0.5s ease;
     perspective: 1000px;
     transform-style: preserve-3d;
+    overflow: hidden; /* Evitar que el contenido se desborde */
 }
 
 .card:hover {
@@ -236,8 +237,6 @@ h2:hover {
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
-    transform: rotateY(0deg);
-    transition: transform 0.5s ease;
 }
 
 .card img:hover {
@@ -249,6 +248,9 @@ h2:hover {
     font-size: 1.8em;
     color: #007BFF;
     transition: color 0.3s ease;
+    white-space: nowrap; /* Evitar saltos de línea */
+    overflow: hidden; /* Ocultar desbordamiento */
+    text-overflow: ellipsis; /* Añadir puntos suspensivos si el texto es demasiado largo */
 }
 
 .card h3:hover {
@@ -257,6 +259,9 @@ h2:hover {
 
 .card p {
     margin: 5px 0;
+    max-height: 50px; /* Limitar la altura del texto */
+    overflow: hidden; /* Ocultar el desbordamiento */
+    text-overflow: ellipsis; /* Añadir puntos suspensivos si el texto es demasiado largo */
 }
 
 /* Estilos para el modal de edición */
