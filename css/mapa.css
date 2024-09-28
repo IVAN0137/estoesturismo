@@ -24,16 +24,33 @@ body {
 
 /* Header */
 header {
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque background for readability */
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly opaque background for readability */
     color: #333;
     padding: 20px 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     border-bottom: 5px solid #ff6f61;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000; /* Ensure header is above other elements */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    animation: slideDown 0.5s ease forwards; /* Slide down effect on page load */
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+header:hover {
+    background-color: rgba(255, 255, 255, 1); /* Full opacity on hover */
 }
 
 header .container {
@@ -50,6 +67,7 @@ header h1 {
     color: #333;
 }
 
+/* Navigation */
 nav ul {
     list-style: none;
     padding: 0;
@@ -61,13 +79,15 @@ nav ul li {
     margin: 0 15px;
 }
 
-nav ul li a img {
-    vertical-align: middle;
-    transition: transform 0.3s ease;
+nav ul li a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-nav ul li a img:hover {
-    transform: scale(1.1);
+nav ul li a:hover {
+    color: #ff6f61;
+    transform: scale(1.2) rotate(3deg); /* Rotate and scale effect on hover */
 }
 
 /* Map Container */
@@ -77,20 +97,31 @@ nav ul li a img:hover {
     margin-top: 80px; /* Adjust for header height */
     max-width: 1200px;
     margin: 0 auto;
+    animation: fadeIn 0.5s ease forwards; /* Fade-in effect for the map container */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Map */
 #map {
     flex: 3;
     height: 100%;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    border-radius: 50px;
-    transition: transform 0.5s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Box shadow effect */
     margin-top: 10%;
 }
 
 #map:hover {
-    transform: scale(1.03);
+    transform: scale(1.05) rotate(2deg); /* Slight rotation on hover */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
 }
 
 /* Sidebar */
@@ -99,11 +130,23 @@ nav ul li a img:hover {
     padding: 20px;
     background-color: #ffffff;
     border-left: 2px solid #ff6f61;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     overflow-y: auto;
     transition: background-color 0.3s ease;
     margin-top: 10%; /* Adjust this value to position it 20% from the top of its container */
+    animation: slideIn 0.5s ease forwards; /* Slide in effect for the sidebar */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-20%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 #sidebar:hover {
@@ -112,9 +155,10 @@ nav ul li a img:hover {
 
 #sidebar h2 {
     margin-top: 0;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
     color: #ff6f61;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 #sidebar ul {
@@ -126,14 +170,14 @@ nav ul li a img:hover {
 #sidebar ul li {
     margin-bottom: 15px;
     font-size: 16px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     border-radius: 5px;
     padding: 10px;
 }
 
 #sidebar ul li:hover {
     background-color: #f0f0f0;
-    transform: translateX(10px);
+    transform: translateX(5px) scale(1.05); /* Scale and translate on hover */
 }
 
 #sidebar ul li a {

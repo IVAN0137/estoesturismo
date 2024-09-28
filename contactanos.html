@@ -11,10 +11,26 @@
         <div class="container">
             <nav>
                 <ul>
-                    <li><a href="mapa.html"><img src="res/botones/marcador.png" alt="Destinos" width="30px" height="30px"></a></li>
-                    <li><a href="ver_registros.html"><img src="res/botones/llamada-telefonica.png" alt="Contáctanos" width="30px" height="30px"></a></li>
-                    <li><a href="pronostico.html"><img src="res/botones/estrella.png" alt="Califícanos" width="30px" height="30px"></a></li>
-                    <li><a href="logout.php"> <img src="res/botones/logout.png" alt="cerrar sesion" width="30px" height="30px">cerrar sesión</a></li>
+                    <li><a href="mapa.html">
+                        <img src="res/botones/marcador.png" alt="Destinos" width="30px" height="30px">
+                        <span>Destinos</span> <!-- Texto que aparecerá al pasar el mouse -->
+                    </a></li>
+                    
+                    <li><a href="ver_registros.html">
+                        <img src="res/botones/llamada-telefonica.png" alt="Contáctanos" width="30px" height="30px">
+                        <span>Contáctanos</span>
+                    </a></li>
+                    
+                    <li><a href="pronostico.html">
+                        <img src="res/botones/estrella.png" alt="Califícanos" width="30px" height="30px">
+                        <span>Califícanos</span>
+                    </a></li>
+                    
+                    <li><a href="logout.php">
+                        <img src="res/botones/logout.png" alt="Cerrar sesión" width="30px" height="30px">
+                        <span>Cerrar sesión</span>
+                    </a></li>
+                    
                 </ul>
             </nav>
         </div>
@@ -32,23 +48,23 @@
             <form id="add-guide-form" enctype="multipart/form-data" class="form">
                 <div class="form-group">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Nombre del dueño de la empresa o nombre de la empresa.">
                 </div>
 
                 <div class="form-group">
                     <label for="colonia">Colonia:</label>
-                    <input type="text" id="colonia" name="colonia" required>
+                    <input type="text" id="colonia" name="colonia" required placeholder="Colonia, comunidad o localidad donde se encuentran ubicados.">
                 </div>
 
                 <div class="form-group">
                     <label for="municipio">Municipio:</label>
-                    <input type="text" id="municipio" name="municipio" required>
+                    <input type="text" id="municipio" name="municipio" required placeholder="Municipio o municipios en los cuales estan ubicados. ">
                 </div>
 
                 <div class="form-group">
                     <label for="telefono">Número de Teléfono:</label>
                     <input type="text" id="telefono"  pattern="^[0-9]{10}$" 
-                    placeholder="1234567890"  name="telefono" required>
+                    placeholder="1234567890"  name="telefono" required maxlength="10">
                 </div>
 
                 <div class="form-group">

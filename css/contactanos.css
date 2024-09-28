@@ -1,51 +1,210 @@
+/* Estilo general del cuerpo */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f3ec78, #af4261);
+    color: #fff;
+    overflow-x: hidden;
 }
 
+/* Contenedor principal */
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform 0.5s ease;
 }
 
-h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
+/* Animación 3D para el hover del contenedor */
+.container:hover {
+    transform: perspective(1000px) rotateY(5deg) rotateX(2deg);
 }
 
-.section {
+/* Estilos para el encabezado */
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transform: translateZ(0);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    letter-spacing: 2px;
+    transform: rotateX(0deg) rotateY(0deg);
+    transition: transform 0.5s;
+}
+
+header h1:hover {
+    transform: rotateX(10deg) rotateY(10deg);
+}
+
+/* Estilo del contenedor de navegación */
+nav ul {
+    list-style-type: none;
+    padding: 0;
     margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    transform: rotateY(0deg);
+}
+
+nav li {
+    margin: 0 20px;
+    position: relative;
+    perspective: 800px;
+    transform-style: preserve-3d;
+}
+
+nav li a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    transition: transform 0.5s ease;
+    transform: rotateY(0deg);
+}
+
+nav img {
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+    backface-visibility: hidden;
+}
+
+nav img:hover {
+    transform: scale(1.3) rotateZ(360deg); /* Animación 3D rotatoria */
+}
+
+/* Texto que aparece al hacer hover sobre los íconos */
+nav li a span {
+    display: none;
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    z-index: 1000;
+}
+
+nav li:hover a span {
+    display: block;
+    opacity: 1;
+    transform: translate(60px, -50%) scale(1.1); /* Escala y desplazamiento suave */
+    transition: all 0.4s ease-in-out;
+}
+
+nav li:hover a {
+    transform: scale(1.2) rotateY(10deg); /* Efecto 3D en hover */
+}
+
+/* Estilos para las secciones */
+.section {
+    margin: 40px 0;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    transform: rotateX(0deg);
+}
+
+h2 {
+    font-size: 2.5em;
+    color: #FFD700;
+    margin-bottom: 20px;
+    transition: transform 0.4s ease, color 0.4s ease;
+}
+
+h2:hover {
+    transform: scale(1.1) rotateX(10deg);
+    color: #00ff99;
+}
+
+/* Estilos para el formulario */
+.form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateZ(0);
+    transition: transform 0.5s ease;
+}
+
+.form:hover {
+    transform: translateY(-20px) scale(1.02);
 }
 
 .form-group {
     margin-bottom: 15px;
+    text-align: left;
 }
 
 .form-group label {
     display: block;
     margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #007BFF;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
 }
 
 .btn-submit {
     background-color: #007BFF;
-    color: #FFF;
-    padding: 10px 15px;
+    color: #fff;
+    padding: 12px 20px;
     border: none;
+    border-radius: 50px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn-submit:hover {
     background-color: #0056b3;
+    transform: scale(1.1) rotate(-2deg);
 }
 
+/* Estilos para el buscador */
+#search-input {
+    width: 100%;
+    padding: 15px;
+    font-size: 1em;
+    border: 2px solid #007BFF;
+    border-radius: 20px;
+    margin-top: 10px;
+    transition: border-color 0.3s ease;
+}
+
+#search-input:focus {
+    border-color: #0056b3;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+/* Estilos para el contenedor de tarjetas */
 .cards-container {
     display: flex;
     flex-wrap: wrap;
@@ -53,28 +212,72 @@ h1 {
 }
 
 .card {
-    background-color: #f9f9f9;
+    background-color: rgba(255, 255, 255, 0.9);
     border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    margin: 20px;
     padding: 20px;
     text-align: left;
     width: calc(33% - 40px);
     box-sizing: border-box;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.card:hover {
+    transform: rotateY(10deg) translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
 .card img {
     max-width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 15px;
+    transform: rotateY(0deg);
+    transition: transform 0.5s ease;
+}
+
+.card img:hover {
+    transform: rotateY(360deg);
 }
 
 .card h3 {
     margin-top: 0;
+    font-size: 1.8em;
+    color: #007BFF;
+    transition: color 0.3s ease;
+}
+
+.card h3:hover {
+    color: #FF5733;
 }
 
 .card p {
     margin: 5px 0;
+}
+
+/* Estilos para el modal de edición */
+#edit-modal {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+#edit-modal .form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
