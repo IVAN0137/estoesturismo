@@ -1,29 +1,14 @@
 <?php
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-// Habilitar la visualización de errores para depuración
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-// Configuración de la conexión a la base de datos
-$host = "sql210.infinityfree.com";
-$dbUsername = "	if0_37315282"; // Cambia esto por tu usuario de MySQL
-$dbPassword = "MAGI020601"; // Cambia esto por tu contraseña de MySQL
-$dbName = "if0_37315282_login_system";
-
 // Habilitar la visualización de errores para depuración
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Configuración de la conexión a la base de datos
-$host = "localhost";
-$dbUsername = "root"; // Cambia esto por tu usuario de MySQL
-$dbPassword = ""; // Cambia esto por tu contraseña de MySQL
-$dbName = "login_system";
+$host = "sql210.infinityfree.com"; // Dirección del servidor de la base de datos
+$dbUsername = "if0_37315282"; // Nombre de usuario de la base de datos
+$dbPassword = "MAGI020601"; // Contraseña de la base de datos
+$dbName = "if0_37315282_login_system"; // Nombre de la base de datos
 
 // Crear conexión
 $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
@@ -41,10 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verificar si el usuario ya existe
     $sql = "SELECT id FROM users WHERE username = ?";
     $stmt = $conn->prepare($sql);
+    
     if ($stmt === false) {
         die('Error en la consulta SQL: ' . $conn->error);
     }
-    
+
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->store_result();
@@ -58,16 +44,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Insertar nuevo usuario con sentencia preparada
         $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
         $stmt = $conn->prepare($sql);
+        
         if ($stmt === false) {
             die('Error en la consulta SQL: ' . $conn->error);
         }
-        
+
         $stmt->bind_param("ss", $username, $hashedPassword);
         
         if ($stmt->execute()) {
             // Redirigir al login una vez registrado
-            header("Location: login.html");
-            exit(); // Es importante salir después de header() para evitar que se ejecute más código
+            header("Location: index.html");
+            exit(); // Importante salir después de header() para evitar más ejecuciones
         } else {
             echo "Error al registrar el usuario.";
         }
