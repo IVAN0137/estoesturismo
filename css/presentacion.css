@@ -1,227 +1,226 @@
-/* Reset de estilos básicos */
-body, h1, h2, h3, p {
-    margin: 0;
-    padding: 0;
-}
-
-/* Estilos generales del cuerpo */
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background: linear-gradient(to right, #85e3ff, #e6e6e6);
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
     color: #333;
-    perspective: 1000px; /* Añade perspectiva 3D */
+    overflow-x: hidden;
 }
 
-/* Estilo del encabezado */
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
 header {
-    background: #007bff;
+    background-color: #264653;
     color: white;
     padding: 20px 0;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 2s ease-in-out, rotateHeader 3s ease-in-out infinite alternate;
+    position: relative;
 }
 
-@keyframes rotateHeader {
-    from { transform: rotateX(0deg); }
-    to { transform: rotateX(10deg); }
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Estilo del contenedor de navegación */
-nav {
-    margin: 20px auto;
-    perspective: 1000px;
+.logo:hover {
+    transform: rotate(360deg);
 }
 
 nav ul {
+    list-style: none;
+    padding: 0;
     display: flex;
     justify-content: center;
-    list-style: none;
-    animation: slideIn 1.5s ease forwards;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
-@keyframes slideIn {
-    from { transform: translateY(-50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+nav ul li {
+    margin: 10px 20px;
 }
 
-nav li {
-    margin: 0 25px;
-    position: relative;
-}
-
-nav li a {
+nav ul li a {
     text-decoration: none;
-    color: #fff;
-    font-size: 18px;
+    color: white;
+    font-weight: bold;
     display: flex;
     align-items: center;
-    justify-content: center;
     position: relative;
-    z-index: 10;
-    transition: transform 0.6s ease, background-color 0.4s ease;
-    padding: 12px 20px;
-    border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    padding: 10px 15px;
+    border-radius: 5px;
 }
 
-nav li a:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    transform: scale(1.4) rotateY(20deg);
+nav ul li a img {
+    margin-right: 5px;
+    transition: transform 0.3s ease-in-out;
 }
 
-nav img {
-    vertical-align: middle;
-    transition: transform 0.4s ease, filter 0.4s ease;
-    backface-visibility: hidden;
+nav ul li a span {
+    position: relative;
+    z-index: 1;
 }
 
-nav img:hover {
-    transform: scale(1.7) rotateZ(720deg);
-    filter: drop-shadow(3px 5px 10px rgba(0, 0, 0, 0.6));
+nav ul li a:hover {
+    background-color: #2a9d8f;
+    transform: scale(1.1);
 }
 
-nav li a span {
-    display: none;
-    position: absolute;
-    left: 60px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #00ff00;
-    color: #fff;
-    padding: 10px 16px;
-    border-radius: 12px;
-    white-space: nowrap;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    z-index: 1000;
-    transition: opacity 0.4s ease, transform 0.4s ease;
+nav ul li a:hover img {
+    transform: scale(1.2);
 }
 
-nav li:hover a span {
-    display: block;
+nav ul li a:hover .tooltip {
     opacity: 1;
-    transform: translate(80px, -50%) scale(1.3);
-    transition: all 0.5s ease-in-out;
+    visibility: visible;
 }
 
-/* Estilo del contenedor principal */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+nav ul li a:active {
+    animation: fadeOut 0.6s forwards;
 }
 
-/* Estilos para las secciones */
+/* Animación de desvanecimiento */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+}
+
+.tooltip {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e76f51;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+h1, h2, h3 {
+    color: #2a9d8f;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+header nav {
+    background-color: #264653;
+    padding: 10px 0;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
 main {
-    padding: 20px;
-    animation: slideUp 2s ease-in-out;
+    margin-top: 20px;
 }
 
-@keyframes slideUp {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-h1, h2 {
+main h2 {
     text-align: center;
-    margin-bottom: 20px;
-    animation: fadeInText 2s ease-in-out;
+    margin-top: 40px;
 }
 
-@keyframes fadeInText {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+main p {
+    text-align: justify;
+    line-height: 1.6;
+    margin: 20px 0;
 }
 
-h2 {
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 5px;
+.attraction {
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Estilos para las imágenes de las atracciones */
 .attraction img {
-    max-width: 80%;
+    width: 100%;
     height: auto;
+    max-width: 600px;
     border-radius: 10px;
-    transition: transform 0.8s ease, box-shadow 0.8s ease;
-    margin: 10px auto;
-    display: block;
-    transform: perspective(800px) rotateY(0deg);
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
-.attraction img:hover {
-    transform: perspective(800px) rotateY(20deg) scale(1.1);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+.attraction:hover img {
+    transform: scale(1.1);
+    filter: brightness(80%);
 }
 
-/* Estilo del pie de página */
+.attraction .description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.attraction:hover .description {
+    opacity: 1;
+    visibility: visible;
+}
+
 footer {
-    background: #007bff;
+    background-color: #264653;
     color: white;
     text-align: center;
-    padding: 10px 0;
-    position: relative;
-    margin-top: 20px;
-    animation: rotateFooter 2s ease-in-out infinite alternate;
+    padding: 20px 0;
+    margin-top: 40px;
 }
 
-@keyframes rotateFooter {
-    from { transform: rotateX(0deg); }
-    to { transform: rotateX(10deg); }
+footer p {
+    margin: 0;
 }
 
-/* Media queries para hacerlo responsive */
-@media (max-width: 1024px) {
-    nav li a {
-        padding: 10px 15px;
-        font-size: 16px;
-    }
-
-    .attraction img {
-        max-width: 90%;
-    }
-}
-
-@media (max-width: 768px) {
-    nav li {
-        margin: 0 15px;
-    }
-
-    nav li a {
-        padding: 8px 12px;
-        font-size: 14px;
-    }
-
-    h1, h2 {
-        font-size: 1.5em;
-    }
-
-    .container {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav li {
+@media screen and (max-width: 768px) {
+    nav ul li {
+        display: block;
         margin: 10px 0;
     }
 
-    nav li a {
-        padding: 6px 10px;
-        font-size: 12px;
+    header nav ul {
+        flex-direction: column;
     }
 
-    h1, h2 {
-        font-size: 1.2em;
+    nav ul li a img {
+        margin-right: 0;
     }
-
-    .container {
-        padding: 10px;
+    
+    .attraction img {
+        max-width: 100%;
     }
 }
