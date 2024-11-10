@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours Virtuales</title>
+    <link rel="stylesheet" href="css/vr.css">
+    <link rel="icon" type="image/png" href="res/logo/MEXICO ESCONDIDO.png">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Tours Virtuales</h1>
+
+        <!-- Barra de búsqueda -->
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Buscar Tour...">
+        </div>
+
+        <!-- Galería de tours -->
+        <div class="gallery">
+            <div class="gallery-item">
+                <iframe src="https://www.google.com/maps/embed?pb=!4v1731181530413!6m8!1m7!1snAPmVz0jKslx__CEAjO47w!2m2!1d21.13489010989662!2d-99.62854594749989!3f154.1594231300612!4f-6.4703979274259495!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>             
+             <h2>Pinal De Amoles</h2>
+            </div>
+            <div class="gallery-item">
+                <iframe src="https://www.google.com/maps/embed?pb=!4v1731188235156!6m8!1m7!1sCAoSLEFGMVFpcE02Snl0emhWMmZMd1ZlWDg5OGkzRGIzbWxsZ3RYVnBKTHE3MEpE!2m2!1d21.21703402850887!2d-99.47369689903252!3f17.85396599871297!4f-8.95118451225882!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                <h2>Jalpan De Serra</h2>
+            </div>
+            <div class="gallery-item">
+                <iframe src="https://www.google.com/maps/embed?pb=!4v1731188675669!6m8!1m7!1s53GQMzFbBUaKOOLrfRanPA!2m2!1d21.18327086580205!2d-99.32116616635098!3f282.4289025229861!4f2.4918586589662084!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                <h2>Landa De Matamoros</h2>
+            </div><div class="gallery-item">
+                <iframe src="https://www.google.com/maps/embed?pb=!4v1731188830468!6m8!1m7!1sCAoSLEFGMVFpcE5FdVpDangzNy1DTE5JdVR5b2lCb3RqOEpHSDB6R2lZamRJMlNx!2m2!1d21.39003476513072!2d-98.98958537859252!3f321.5774672168421!4f3.880687214574664!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                <h2>Xilitla</h2>
+            </div>
+            <!-- Agrega más tours aquí -->
+        </div>
+
+        <!-- Modal para ver el tour en pantalla completa -->
+        <div id="tour-modal" class="modal">
+            <span class="close">&times;</span>
+            <div class="modal-content">
+                <iframe id="modal-iframe" src="" title="Tour en Pantalla Completa"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/vr.js"></script>
+</body>
+</html>

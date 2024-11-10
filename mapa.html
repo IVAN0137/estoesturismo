@@ -1,59 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title></title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubre Más</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <link rel="stylesheet" href="css/mapa.css">
 </head>
 <body>
     <header>
         <div class="container">
             <h1>DESCUBRE MÁS</h1>
-            
             <nav>
                 <ul>
                     <li>
                         <a href="index.html">
-                            <img src="res/botones/hogar.png" alt="Inicio" width="30px" height="30px">
+                            <img src="res/botones/hogar.png" alt="Inicio" width="30" height="30">
                             <span>Inicio</span>
                         </a>
                     </li>
                     <li>
                         <a href="mapa.html">
-                            <img src="res/botones/marcador.png" alt="Destinos" width="30px" height="30px">
+                            <img src="res/botones/lugar.png" alt="Destinos" width="30" height="30">
                             <span>Ver guías</span>
                         </a>
                     </li>
                     <li>
                         <a href="ver_registros.html">
-                            <img src="res/botones/llamada-telefonica.png" alt="Contáctanos" width="30px" height="30px">
+                            <img src="res/botones/guiaturistico.png" alt="Contáctanos" width="30" height="30">
                             <span>Contáctanos</span>
                         </a>
                     </li>
                     <li>
                         <a href="pronostico.html">
-                            <img src="res/botones/CLIMA.png" alt="Califícanos" width="30px" height="30px">
+                            <img src="res/botones/CLIMA.png" alt="Clima" width="30" height="30">
                             <span>Clima</span>
                         </a>
                     </li>
                 </ul>
             </nav>
+           
         </div>
-    </header>   
+         <div class="container">
+                <img src="res/logo/MEXICO ESCONDIDO.png" alt="Logo" class="logo">
+            </div>
+    </header>
     <div id="map-container">
         <div id="map"></div>
-        <div id="sidebar">  
-            <br>
-            <br>
-            <br>
+        <aside id="sidebar">
             <h2>Direcciones destacadas</h2>
             <ul id="directions-list"></ul>
-        </div>
+        </aside>
     </div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
     <script src="js/mapa.js"></script>
 </body>
 </html>
-

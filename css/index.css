@@ -37,9 +37,6 @@ header {
     left: 0;
     z-index: 1000;
     animation: slideDown 1.2s ease forwards; /* Efecto de deslizamiento en la carga */
-    display: flex;
-    justify-content: center; /* Centrar el contenido horizontalmente */
-    align-items: center; /* Centrar el contenido verticalmente */
 }
 
 header .container {
@@ -55,20 +52,6 @@ header h1 {
     font-weight: 900;
     color: #fff;
     animation: fadeInLeft 1.5s ease;
-}
-
-/* Logo */
-header .logo {
-    position: absolute; /* Para poder centrar el logo con flexbox */
-    left: 50%; /* Centrar horizontalmente */
-    transform: translateX(-50%); /* Ajuste fino para centrar el logo */
-    width: 100px; /* Tamaño ajustable del logo */
-    height: auto; /* Mantener la proporción */
-    transition: transform 0.4s ease; /* Transición suave para el hover */
-}
-
-header .logo:hover {
-    transform: translateX(-50%) scale(1.1); /* Mantener centrado y aumentar el tamaño al hacer hover */
 }
 
 /* Animaciones de entrada */
@@ -267,3 +250,22 @@ nav li:hover a span {
         transform: scale(1);
     }
 }
+
+/* Footer */
+header {
+    display: flex;
+    justify-content: space-between; /* Distribuye espacio entre los elementos hijos */
+    align-items: center;            /* Alinea los elementos verticalmente */
+}
+
+header .logo {
+    width: 200px;                  /* Tamaño ajustable del logo */
+    height: auto;                  /* Mantener la proporción */
+    transition: transform 0.4s ease; /* Transición suave para el hover */
+    order: 2;                      /* Coloca el logo en el segundo lugar para que esté a la derecha */
+}
+
+header .logo:hover {
+    transform: scale(1.1);          /* Aumenta el tamaño del logo al hacer hover */
+}
+  
