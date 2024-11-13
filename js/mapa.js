@@ -49,7 +49,9 @@ var markers = [
     { coords: [21.385611, -98.989609], name: 'EX CONVENTO SAN AGUSTIN', popup:'<a href="xilitla.html"><b>EXCONVENTO SAN AGUSTIN</b><br><img src="res/xilitla/sanagustin.jpg" alt="jardin de edward james" width="150" height="100"></a>' },
     { coords: [21.395466, -98.997223], name: 'CASCADA DE LOS COMALES', popup:'<a href="xilitla.html"><b>CASCADA DE LOS COMALES</b><br><img src="res/xilitla/comales.png" alt="cascada de los comales" width="150" height="100"></a>' },
     { coords: [21.387055, -98.981844], name: 'CUEVA DEL SALITRE', popup:'<a href="xilitla.html"><b>CUEVA DEL SALITRE</b><br><img src="res/xilitla/salitre.jpg" alt="cueva del salitre" width="150" height="100"></a>' },
-
+    //cadereyta
+    {coords:[20.694349, -99.813846], name: 'CADEREYTA', popup:'<a href="cadereyta.html"><b>CADEREYTA</b><br><img src="res/cadereyta/" alt="cadereyta" width="150px" height=100px ></a>'},
+    
 ];
 
 // Crear marcadores y añadir eventos

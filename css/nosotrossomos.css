@@ -1,0 +1,245 @@
+/* css/nosotrossomos.css */
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    overflow-x: hidden;
+}
+
+header {
+    background: linear-gradient(90deg, #0052cc, #ff0099);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    animation: fadeInDown 2s ease-out;
+}
+
+header img {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    animation: pulse 3s infinite;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 2em;
+    color: #0052cc;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+}
+
+.section-title::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background: #ff0099;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+
+.section-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-out;
+}
+.section-contentt {
+    background: linear-gradient(135deg, rgba(26, 135, 179, 0.9), rgba(13, 9, 3, 0.9));    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.team-member {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    width: 200px;
+    transition: transform 0.5s, box-shadow 0.5s;
+    animation: bounceIn 2s ease-out;
+    animation-fill-mode: forwards;
+}
+
+.team-member:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.team-member:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.team-member:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+.team-member:nth-child(4) {
+    animation-delay: 2s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-member img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.team-member img:hover {
+    transform: scale(1.1);
+}
+
+.team-member h3 {
+    font-size: 1.2em;
+    margin: 10px 0 5px;
+}
+
+.team-member p {
+    color: #777;
+    margin: 0 0 15px;
+}
+
+.mission {
+    background: #0052cc;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-out;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -3000px, 0);
+    }
+    60% {
+        opacity: 1;
+        transform: translate3d(0, 25px, 0);
+    }
+    75% {
+        transform: translate3d(0, -10px, 0);
+    }
+    90% {
+        transform: translate3d(0, 5px, 0);
+    }
+    100% {
+        transform: none;
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .container {
+        padding: 10px;
+    }
+
+    .team-member {
+        width: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .team-member {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .team-member {
+        width: 100%;
+    }
+
+    .section-title {
+        font-size: 1.5em;
+    }
+
+    .section-content {  
+        padding: 15px;
+    }
+}
