@@ -32,26 +32,40 @@ var markers = [
     { coords: [21.134362, -99.626095], name: 'MONUMENTO HACIA LOS MINEROS', popup: '<a href="pinal.html"><b>MONUMENTO HACIA LOS MINEROS</b><br><img src="res/pinal/mineros.jpg" alt="Monumento Hacia Los Mineros" width="150" height="100"></a>' },
     { coords: [21.134545, -99.624812], name: 'CENTRO COMUNITARIO', popup: '<a href="pinal.html"><b>CENTRO COMUNITARIO</b><br><img src="res/pinal/centrodedia.png" alt="Centro comunitario" width="150" height="100"></a>' },
     { coords: [21.134877, -99.627899], name: 'CASA DEL ESTUDIANTE PEÑAMILLER-PINAL', popup: '<a href="pinal.html"><b>CASA DEL ESTUDIANTE PEÑAMILLER-PINAL</b><br><img src="res/pinal/casaestudiante.png" alt="Mirador Pinal" width="150" height="100"></a>' },
+    { coords: [21.1233705,-99.5339916], name: 'CASCADA EL SALTO ', popup: '<a href="pinal.html"><b>CASCADA EL SALTO</b><br><img src="res/pinal/Cascada-el-Salto.jpg" alt="cascada el salto" width="150" height="100"></a>' },
+
     // Jalpan de Serra     
     { coords: [21.217321, -99.473034], name: 'JALPAN DE SERRA', popup: '<a href="jalpan.html"><b>JALPAN DE SERRA</b><br><img src="res/jalpan/jalpan.jpg" alt="Jalpan De serra" width="150" height="100"></a>' },
     { coords: [21.216758, -99.473858], name: 'MISIÓN DE SANTIAGO', popup: '<a href="jalpan.html"><b>MISIÓN DE SANTIAGO</b><br><img src="res/jalpan/santiago.jpg" alt="Jalpan" width="150" height="100"></a>' },
     { coords: [21.20622, -99.47230], name: 'PRESA JALPAN', popup: '<a href="jalpan.html"><b>PRESA JALPAN</b><br><img src="res/jalpan/presa.jpg" alt="Presa Jalpan" width="150" height="100"></a>' },
         { coords: [21.217768, -99.473729], name: 'MUSEO HISTORICO DE LA SIERRA GORDA', popup: '<a href="jalpan.html"><b>MUSEO HISTORICO DE LA SIERRA GORDA</b><br><img src="res/jalpan/museoj.jpg" alt="Museo Historico De La Sierra Gorda" width="150" height="100"></a>' },
+        { coords: [21.160738, -99.396671], name: 'ZONA ARQUEOLOGICA DE TANCAMA', popup: '<a href="jalpan.html"><b>ZONA ARQUELOGICA DE TANCAMA</b><br><img src="res/jalpan/tancama.jpg" alt="zona arquelogica de tancama" width="150" height="100"></a>' },
+        { coords: [21.398757, -99.330354], name: 'MUSEO PAME XI OI', popup: '<a href="jalpan.html"><b>MUSEO PAME XI OI</b><br><img src="res/jalpan/museopame.jpg" alt="museo pame xi oi" width="150" height="100"></a>' },
+        { coords: [21.44604, -99.44223], name: 'RIO SANTA MARIA', popup: '<a href="jalpan.html"><b>RIO SANTA MARIA</b><br><img src="res/jalpan/rio santa maria.jpg" alt="rio santa maria" width="150" height="100"></a>' },
+        { coords: [21.399327, -99.329560], name: 'MISION DE TANCOYOL', popup: '<a href="jalpan.html"><b>MISION DE TANCOYOL</b><br><img src="res/jalpan/tancoyol.jpg" alt="mision de tancoyol " width="150" height="100"></a>' },
+        { coords: [21.51353, -99.17178], name: 'VALLE VERDE', popup: '<a href="jalpan.html"><b>VALLE VERDE</b><br><img src="res/jalpan/valle verde.jpg" alt="valle verde" width="150" height="100"></a>' },
+        { coords: [21.4968788,-99.2799002], name: 'CUEVA DE AGUA', popup: '<a href="jalpan.html"><b>CUEVA DEL AGUA</b><br><img src="res/jalpan/cueva del agua.jpg" alt="cueva del agua" width="150" height="100"></a>' },
+        { coords: [21.4968788,-99.2799002], name: 'SAN ANTONIO TANCOYOL', popup: '<a href="jalpan.html"><b>SAN ANTONIO TANCOYOL</b><br><img src="res/jalpan/san antonio tancoyol.jpg" alt="san antonio tancoyol" width="150" height="100"></a>' },
+
+
+
+
     //landa de matamoros
     { coords: [21.18390, -99.32157], name: 'LANDA DE MATAMOROS', popup: '<a href="landa.html"><b>LANDA DE MARAMOROS</b><br><img src="res/landa/landa.jpg" alt="Landa de Matamoros" width="150" height="100"></a>' },
     { coords: [21.244180, -99.122727], name: 'LAS POSAS DEL RÍO VERDITO', popup:'<a href="landa.html"><b> LAS POSAS DEL RÍO VERDITO</b><br><img src="res/landa/rioverdito.jpg" alt="rio verdito" width="150" height="100"></a>' },
     { coords: [21.278347, -99.150713], name: 'EL MADROÑO, LANDA DE MATAMOROS', popup:'<a href="landa.html"><b>EL MADROÑO, LANDA DE MATAMOROS </b><br><img src="res/landa/madrono.jpg" alt="" width="150" height="100"></a>' },
     { coords: [21.163825, -99.191410], name: 'MISION DE SAN FRANSICO DE ASÍS DEL VALE DE TILACO', popup:'<a href="landa.html"><b>MISION DE SAN FRANSICO DE ASÍS DEL VALE DE TILACO</b><br><img src="res/landa/tilaco.jpg" alt="" width="150" height="100"></a>' },
     { coords: [21.268146966410278, -99.16365092394435], name: 'RODEO ECOTURISMO', popup:'<a href="landa.html"><b>RODEO ECOTURISMO</b><br><img src="res/landa/eco.jpg" alt="" width="150" height="100"></a>' },
+    { coords: [21.1631931,-99.1937817], name: 'HURACAN DE LA SIERRA ', popup:'<a href="landa.html"><b>HURACAN DE LA SIERRA</b><br><img src="res/landa/huracandelasierra.jpg" alt="huracan de la sierra" width="150" height="100"></a>' },
+
     //xlitla
     { coords: [21.38647, -98.99201], name: 'XILITLA', popup:'<a href="xilitla.html"><b>XILITLA</b><br><img src="res/xilitla/xilitapaisaje.jpg" alt="xilitla" width="150" height="100"></a>' },
     { coords: [21.397589, -98.996505], name: 'JARDIN SURREALISTA DE EDWARD JAMES', popup: '<a href="xilitla.html"><b>JARDIN SURREALISTA DE EDWARD JAMES</b><br><img src="res/xilitla/jardinedward.jpg" alt="jardin de edward james" width="150" height="100"></a>' },
     { coords: [21.385611, -98.989609], name: 'EX CONVENTO SAN AGUSTIN', popup:'<a href="xilitla.html"><b>EXCONVENTO SAN AGUSTIN</b><br><img src="res/xilitla/sanagustin.jpg" alt="jardin de edward james" width="150" height="100"></a>' },
     { coords: [21.395466, -98.997223], name: 'CASCADA DE LOS COMALES', popup:'<a href="xilitla.html"><b>CASCADA DE LOS COMALES</b><br><img src="res/xilitla/comales.png" alt="cascada de los comales" width="150" height="100"></a>' },
     { coords: [21.387055, -98.981844], name: 'CUEVA DEL SALITRE', popup:'<a href="xilitla.html"><b>CUEVA DEL SALITRE</b><br><img src="res/xilitla/salitre.jpg" alt="cueva del salitre" width="150" height="100"></a>' },
-    //cadereyta
-    {coords:[20.694349, -99.813846], name: 'CADEREYTA', popup:'<a href="cadereyta.html"><b>CADEREYTA</b><br><img src="res/cadereyta/" alt="cadereyta" width="150px" height=100px ></a>'},
     
+
 ];
 
 // Crear marcadores y añadir eventos
