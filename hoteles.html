@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de hoteles</title>
+    <link rel="stylesheet" href="css/hoteles.css">
+    <link rel="icon" type="image/png" href="res/logo/MEXICO ESCONDIDO.png">
+</head>
+
+<body>
+    <header></header>
+    <div class="container">
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <img src="res/botones/hogar.png" alt="Inicio" width="30px" height="30px">
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li><a href="mapa.html">
+                        <img src="res/botones/marcador.png" alt="Destinos" width="30px" height="30px">
+                        <span>Destinos</span> <!-- Texto que aparecerá al pasar el mouse -->
+                    </a></li>
+
+                <li><a href="ver_registros.html">
+                        <img src="res/botones/llamada-telefonica.png" alt="Contáctanos" width="30px" height="30px">
+                        <span>Ver guías</span>
+                    </a></li>
+
+                <li><a href="pronostico.html">
+                        <img src="res/botones/CLIMA.png" alt="Califícanos" width="30px" height="30px">
+                        <span>Clima</span>
+                    </a></li>
+
+                <li><a href="logout.php">
+                        <img src="res/botones/logout.png" alt="Cerrar sesión" width="30px" height="30px">
+                        <span>Cerrar sesión</span>
+                    </a></li>
+
+            </ul>
+        </nav>
+    </div>
+    </header>
+    <header>
+        <div class="container">
+            <h1>Catálogo de Hoteles</h1>
+        </div>
+    </header>
+
+    <main>
+        <!-- Formulario para agregar guías turísticos -->
+        <section id="formulario" class="section">
+            <h2>Agregar Hotel</h2>
+            <form id="add-guide-form" enctype="multipart/form-data" class="form">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Nombre del Hotel">
+                </div>
+
+                <div class="form-group">
+                    <label for="colonia">Colonia:</label>
+                    <input type="text" id="colonia" name="colonia" required
+                        placeholder="Colonia, comunidad o localidad donde se encuentra ubicado.">
+                </div>
+
+                <div class="form-group">
+                    <label for="municipio">Municipio:</label>
+                    <input type="text" id="municipio" name="municipio" required
+                        placeholder="Municipio en el que se encuentra ubicado.">
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Número de Teléfono:</label>
+                    <input type="text" id="telefono" pattern="^[0-9]{10}$" placeholder="1234567890" name="telefono"
+                        required maxlength="10">
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcion">Descripción Breve:</label>
+                    <textarea id="descripcion" name="descripcion" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="foto">Foto:</label>
+                    <input type="file" id="foto" name="foto" accept="image/*" required>
+                </div>
+
+                <button type="submit" class="btn-submit">Agregar Hotel</button>
+            </form>
+        </section>
+
+        <!-- Buscador -->
+        <section id="buscador" class="section">
+            <h2>Buscar Hotel</h2>
+            <input type="text" id="search-input"
+                placeholder="Buscar por nombre, colonia, municipio, teléfono o correo...">
+        </section>
+
+        <!-- Contenedor de Cards -->
+        <div class="cards-container" id="cards-container">
+            <!-- Las tarjetas de guías se cargarán aquí mediante AJAX -->
+        </div>
+
+        <!-- Modal para editar guía -->
+        <div id="edit-modal" style="display:none;">
+            <h2>Editar Hotel</h2>
+            <form id="edit-guide-form" enctype="multipart/form-data" class="form">
+                <input type="hidden" id="edit-id" name="id">
+                <div class="form-group">
+                    <label for="edit-nombre">Nombre:</label>
+                    <input type="text" id="edit-nombre" name="nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-colonia">Colonia:</label>
+                    <input type="text" id="edit-colonia" name="colonia" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-municipio">Municipio:</label>
+                    <input type="text" id="edit-municipio" name="municipio" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-telefono">Número de Teléfono:</label>
+                    <input type="text" id="edit-telefono" name="telefono" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-correo">Correo Electrónico:</label>
+                    <input type="email" id="edit-correo" name="correo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-descripcion">Descripción Breve:</label>
+                    <textarea id="edit-descripcion" name="descripcion" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-foto">Foto:</label>
+                    <input type="file" id="edit-foto" name="foto" accept="image/*">
+                </div>
+
+                <button type="submit" class="btn-submit">Guardar Cambios</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
