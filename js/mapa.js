@@ -74,11 +74,11 @@ var markers = [
     
     //arroyo seco
 
-    { coords: [21.5503856,-99.7019375], name: ' ARROYO SECO', popup: '<a href="arroyoseco.html"><b>ARROYO SECO</b><br><img src="res/arroyo/arroyoseco.jpg" alt="arroyo seco" width="150" height="100"></a>'},
-    { coords: [21.4441902,-100.1638313], name: ' MISION SAN MIGUEL CONCA', popup: '<a href="arroyoseco.html"><b>MISION SAN MIGUEL CONCA</b><br><img src="res/arroyo/misionconca.jpg" alt="ayutla" width="150" height="100"></a>'},
-    { coords: [21.4055748,-99.6052998], name: ' AYUTLA', popup: '<a href="arroyoseco.html"><b>AYUTLA</b><br><img src="res/arroyo/ayutla.jpg" alt="ayutla" width="150" height="100"></a>'},
-    { coords: [21.4467664,-99.6321278], name: 'ARBOL MILENARIO Y NACIMIENTOS DE CONCA', pupup: '<a href="arroyoseco.html"><b>ARBOL MILENARIO Y NACIMIENTOS DE CONCA</b><br><img src="res/arroyo/arbol.jpeg" alt="arbol milenario y nacimientos de conca" width="150" height="100"></a>'},
-    { coords: [21.3560202,-99.7485061], name: ' SOTANO DEL BARRO', popup: '<a href="arroyoseco.html"><b>SOTANO DEL BARRO</b><br><img src="res/arroyo/sotano.jpg" alt="sotano del barro" width="150" height="100"></a>'},
+    { coords: [21.5503856,-99.7019375], name: ' ARROYO SECO', popup: '<a href="arroyoseco.html"><b>ARROYO SECO</b><br><img src="res/arroyo seco/arroyoseco.jpg" alt="arroyo seco" width="150" height="100"></a>'},
+    { coords: [21.4441902,-100.1638313], name: ' MISION SAN MIGUEL CONCA', popup: '<a href="arroyoseco.html"><b>MISION SAN MIGUEL CONCA</b><br><img src="res/arroyo seco/misionconca.jpg" alt="ayutla" width="150" height="100"></a>'},
+    { coords: [21.4055748,-99.6052998], name: ' AYUTLA', popup: '<a href="arroyoseco.html"><b>AYUTLA</b><br><img src="res/arroyo seco/ayutla.jpg" alt="ayutla" width="150" height="100"></a>'},
+    { coords: [21.4467664,-99.6321278], name: 'ARBOL MILENARIO Y NACIMIENTOS DE CONCA', popup: '<a href="arroyoseco.html"><b>ARBOL MILENARIO Y NACIMIENTOS DE CONCA</b><br><img src="res/arroyo seco/arbol.jpeg" alt="arbol milenario y nacimientos de conca" width="150" height="100"></a>'},
+    { coords: [21.3560202,-99.7485061], name: ' SOTANO DEL BARRO', popup: '<a href="arroyoseco.html"><b>SOTANO DEL BARRO</b><br><img src="res/arroyo seco/sotano.jpg" alt="sotano del barro" width="150" height="100"></a>'},
 
 
 ];
