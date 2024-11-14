@@ -29,5 +29,14 @@ if (move_uploaded_file($foto_tmp, $foto_path)) {
     $sql = "INSERT INTO hotel (nombre,colonia,municipio,telefono, correo, descripcion, foto)
     VALUES ('$nombre', '$colonia', '$municipio', '$telefono', '$correo', '$descripcion', '$foto')";
 
-    //if($conn-)
+    if($conn->query($sql) === TRUE) {
+        echo json_encode(['success' => true]);
+    } else {
+        echo json_encode(['success' => false, 'message' => 'Error al guardar en la base de datos']);
+    }
+} else {
+    echo json_encode(['success' => false, 'message' => 'Error al subir la imagen']);
 }
+
+$conn->close();
+?>
