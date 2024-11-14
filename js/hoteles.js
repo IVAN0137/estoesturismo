@@ -5,12 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardsContainer = document.getElementById('cards-container');
     const editModal = document.getElementById('edit-modal');
 
+    // Función para cargar hoteles
     const loadhotel = () => {
-        fetch()
+        fetch("get_hoteles.php")
             .then(response => response.json())
             .then(data => {
                 cardsContainer.innerHTML = ""; //Limpiar el contenedor de tarjetas
-                data.guides.forEach(guide => {
+                data.guides.forEach(hotel => {
                     const card = document.createElement("div");
                     card.classList.add("card");
                     card.innerHTML = `
@@ -46,8 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const formData = new formData(form);
 
-        fetch({
-
+        fetch("add_hotel.php", {
+            method: "POST",
+            body: formData
         })
             .then(response => response.json())
             .then(data => {
@@ -63,19 +65,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Manejar el clic del boton de edición
     const handleEditClick = (e) => {
+        const id = e.target.dataset.id;
 
-        fetch()
+        fetch("get_hotel.php?id=${id}")
             .then(response => response.json())
-            .then(guide => {
+            .then(hotel => {
                 if (hotel) {
-                    document.getElementById("edit-id").value = hotel.id;
-                    document.getElementById("edit-nombre").value = hotel.nombre;
-                    document.getElementById("edit-colonia").value = hotel.colonia;
-                    document.getElementById("edit-municipio").value = hotel.municipio;
-                    document.getElementById("edit-telefono").value = hotel.telefono;
-                    document.getElementById("edit-correo").value = hotel.correo;
-                    document.getElementById("edit-descripcion").value = hotel.descripcion;
-                    Modal.style.display = "block"; // Mostrar modal de edición
+                    document.getElementById("edit-idht").value = hotel.id;
+                    document.getElementById("edit-nombreht").value = hotel.nombre;
+                    document.getElementById("edit-coloniaht").value = hotel.colonia;
+                    document.getElementById("edit-municipioht").value = hotel.municipio;
+                    document.getElementById("edit-telefonoht").value = hotel.telefono;
+                    document.getElementById("edit-correobt").value = hotel.correo;
+                    document.getElementById("edit-descripcionht").value = hotel.descripcion;
+                    editModal.style.display = "block"; // Mostrar modal de edición
                 }
             })
             .catch(error => console.error("Error:", error));
@@ -86,8 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const formData = new formData(editform);
 
-        fetch({
-
+        fetch("edit_hotel.php", {
+            method: "POST",
+            body: formData
         })
             .then(response => response.json())
             .then(data => {
@@ -105,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const handleDeleteClick = (e) => {
         const id = e.target.dataset.id;
 
-        fetch()
+        fetch("delete_hotel.php?id=${id}")
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
