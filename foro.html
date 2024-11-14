@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseñas de Turismo</title>
+    <link rel="stylesheet" href="css/turismo.css">
+</head>
+<body>
+    <header>
+        <h1>Reseñas de Turismo</h1>
+    </header>
+    <main>
+        <?php if (isset($_GET['exito']) && $_GET['exito'] == '1'): ?>
+            <div class="mensaje-exito">¡Reseña subida exitosamente!</div>
+        <?php endif; ?>
+        <section id="formulario">
+            <button id="boton-subir" class="boton-mas">+</button>
+            <form action="subir.php" method="post" enctype="multipart/form-data" id="form-subir" style="display: none;">
+                <h2>Subir Reseña</h2>
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required>
+                
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" required></textarea>
+                
+                <label for="imagen">Subir Imagen:</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*" required>
+                
+                <button type="submit">Subir</button>
+            </form>
+        </section>
+        <section id="reseñas">
+            <h2>Reseñas Recientes</h2>
+            <div id="lista_reseñas">
+                <?php include 'mostrar_reseñas.php'; ?>
+            </div>
+        </section>
+    </main>
+    <script src="js/resenas.js"></script>
+</body>
+</html>
