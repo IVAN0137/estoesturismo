@@ -2,9 +2,9 @@
 // subir.php
 
 $host = 'sql210.infinityfree.com';
-$db = 'if0_37315282_turismo';
-$user = 'if0_37315282';
-$pass = 'MAGI020601';
+$dbName = 'if0_37315282_turismo';
+$dbUsername = 'if0_37315282';
+$dbPassword = 'MAGI020601';
 
 $conn = new mysqli($host, $user, $pass, $db);
 
