@@ -1,10 +1,10 @@
 <?php
 // mostrar_reseñas.php
 
-$host = 'localhost';
-$db = 'turismo';
-$user = 'root';
-$pass = '';
+$host = 'sql210.infinityfree.com';
+$dbName = 'if0_37315282_turismo';
+$dbUsername = 'if0_37315282';
+$dbPassword = 'MAGI020601';
 
 $conn = new mysqli($host, $user, $pass, $db);
 
