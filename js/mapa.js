@@ -64,6 +64,9 @@ var markers = [
     { coords: [21.385611, -98.989609], name: 'EX CONVENTO SAN AGUSTIN', popup:'<a href="xilitla.html"><b>EXCONVENTO SAN AGUSTIN</b><br><img src="res/xilitla/sanagustin.jpg" alt="jardin de edward james" width="150" height="100"></a>' },
     { coords: [21.395466, -98.997223], name: 'CASCADA DE LOS COMALES', popup:'<a href="xilitla.html"><b>CASCADA DE LOS COMALES</b><br><img src="res/xilitla/comales.png" alt="cascada de los comales" width="150" height="100"></a>' },
     { coords: [21.387055, -98.981844], name: 'CUEVA DEL SALITRE', popup:'<a href="xilitla.html"><b>CUEVA DEL SALITRE</b><br><img src="res/xilitla/salitre.jpg" alt="cueva del salitre" width="150" height="100"></a>' },
+    { coords: [21.4148389,-99.0941433], name: 'LA HOYA DE LA LUZ', popup:'<a href="xilitla.html"><b>LA HOYA DE LA LUZ</b><br><img src="res/xilitla/hoyadelaluz.jpg" alt="la hoya de la luz" width="150" height="100"></a>' },
+    { coords: [21.4592305,-98.9796911], name: 'EL NACIMIENTO DE HUICHIHUAYAN', popup:'<a href="xilitla.html"><b>EL NACIMIENTO DE HUICHIHUAYAN</b><br><img src="res/xilitla/nacimiento.jpg" alt="el nacimiento de huichihuayan" width="150" height="100"></a>' },
+
     
 
 ];
