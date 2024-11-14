@@ -59,8 +59,8 @@ textarea {
 }
 
 button {
-    background-color: #333;
-    color: #fff;
+    background: linear-gradient(135deg, rgba(26, 135, 179, 0.9), rgba(227, 201, 3, 0.9));
+    color: #ff7700;
     border: none;
     cursor: pointer;
     padding: 1rem;
