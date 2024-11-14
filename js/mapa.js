@@ -58,16 +58,27 @@ var markers = [
     { coords: [21.268146966410278, -99.16365092394435], name: 'RODEO ECOTURISMO', popup:'<a href="landa.html"><b>RODEO ECOTURISMO</b><br><img src="res/landa/eco.jpg" alt="" width="150" height="100"></a>' },
     { coords: [21.1631931,-99.1937817], name: 'HURACAN DE LA SIERRA ', popup:'<a href="landa.html"><b>HURACAN DE LA SIERRA</b><br><img src="res/landa/huracandelasierra.jpg" alt="huracan de la sierra" width="150" height="100"></a>' },
 
-    //xlitla
+    //xilitla
     { coords: [21.38647, -98.99201], name: 'XILITLA', popup:'<a href="xilitla.html"><b>XILITLA</b><br><img src="res/xilitla/xilitapaisaje.jpg" alt="xilitla" width="150" height="100"></a>' },
     { coords: [21.397589, -98.996505], name: 'JARDIN SURREALISTA DE EDWARD JAMES', popup: '<a href="xilitla.html"><b>JARDIN SURREALISTA DE EDWARD JAMES</b><br><img src="res/xilitla/jardinedward.jpg" alt="jardin de edward james" width="150" height="100"></a>' },
     { coords: [21.385611, -98.989609], name: 'EX CONVENTO SAN AGUSTIN', popup:'<a href="xilitla.html"><b>EXCONVENTO SAN AGUSTIN</b><br><img src="res/xilitla/sanagustin.jpg" alt="jardin de edward james" width="150" height="100"></a>' },
     { coords: [21.395466, -98.997223], name: 'CASCADA DE LOS COMALES', popup:'<a href="xilitla.html"><b>CASCADA DE LOS COMALES</b><br><img src="res/xilitla/comales.png" alt="cascada de los comales" width="150" height="100"></a>' },
     { coords: [21.387055, -98.981844], name: 'CUEVA DEL SALITRE', popup:'<a href="xilitla.html"><b>CUEVA DEL SALITRE</b><br><img src="res/xilitla/salitre.jpg" alt="cueva del salitre" width="150" height="100"></a>' },
     { coords: [21.398236, -98.996558], name: 'SARCÓFAGO', popup: '<a href="xilitla.html"><b>SARCOFAGO</b><br><img src="" alt="Sarcofago" width="150" height="100"></a>'},
-    { coords: [21.4592305,-98.9796911], name: ' NACIMIENTO DE HUICHIHUAYAN', popup: '<a href="nacimiento.html"><b>NACIMIENTO DE HUICHIHUAYAN</b><br><img src="" alt="nacimiento de huichihuayan" width="150" height="100"></a>'},
-
+    { coords: [21.4592305,-98.9796911], name: ' NACIMIENTO DE HUICHIHUAYAN', popup: '<a href="xilitla.html"><b>NACIMIENTO DE HUICHIHUAYAN</b><br><img src="res/xilitla/nacimiento.jpg" alt="nacimiento de huichihuayan" width="150" height="100"></a>'},
+    { coords: [21.4148389,-99.0941433], name: ' LA HOYA DE LA LUZ', popup: '<a href="hoyadelaluz.html"><b>LA HOYA DE LA LUZ</b><br><img src="res/xilitla/salitre.jpg" alt="la hoya de la luz" width="150" height="100"></a>'},
+    { coords: [21.3880261,-99.0590298], name: ' MUSEO LEONORA CARRIGNTON', popup: '<a href="xilitla.html"><b>MUSEO LEONORA CARRIGNTON</b><br><img src="res/xilitla/museoleonora.jpg" alt="museo leonora carrignton" width="150" height="100"></a>'},
+    { coords: [21.531229, -99.033562], name: ' SOTANO DE LAS GOLONDRINAS', popup: '<a href="xilitla.html"><b>SOTANO DE LAS GOLONDRINAS</b><br><img src="res/xilitla/sotanogolonddrinas.jpg" alt=" sotano las golondrinas" width="150" height="100"></a>'},
+    { coords: [21.621577, -99.018721], name: ' EMBARCADERO LA MORENA', popup: '<a href="xilitla.html"><b>EMBARCADERO LA MORENA</b><br><img src="res/xilitla/morena.jpg" alt="embarcadero la morena" width="150" height="100"></a>'},
+    { coords: [21.398143,-98.9992209], name: ' CASCADA EL GENERAL', popup: '<a href="xilita.html"><b>CASCADA EL GENERAL</b><br><img src="res/xilitla/cascadageneral.jpg" alt="cascada el general" width="150" height="100"></a>'},
+    
     //arroyo seco
+
+    { coords: [21.5503856,-99.7019375], name: ' ARROYO SECO', popup: '<a href="arroyoseco.html"><b>ARROYO SECO</b><br><img src="res/arroyo/arroyoseco.jpg" alt="arroyo seco" width="150" height="100"></a>'},
+    { coords: [21.4441902,-100.1638313], name: ' MISION SAN MIGUEL CONCA', popup: '<a href="arroyoseco.html"><b>MISION SAN MIGUEL CONCA</b><br><img src="res/arroyo/misionconca.jpg" alt="ayutla" width="150" height="100"></a>'},
+    { coords: [21.4055748,-99.6052998], name: ' AYUTLA', popup: '<a href="arroyoseco.html"><b>AYUTLA</b><br><img src="res/arroyo/ayutla.jpg" alt="ayutla" width="150" height="100"></a>'},
+    { coords: [21.4467664,-99.6321278], name: 'ARBOL MILENARIO Y NACIMIENTOS DE CONCA', pupup: '<a href="arroyoseco.html"><b>ARBOL MILENARIO Y NACIMIENTOS DE CONCA</b><br><img src="res/arroyo/arbol.jpeg" alt="arbol milenario y nacimientos de conca" width="150" height="100"></a>'},
+    { coords: [21.3560202,-99.7485061], name: ' SOTANO DEL BARRO', popup: '<a href="arroyoseco.html"><b>SOTANO DEL BARRO</b><br><img src="res/arroyo/sotano.jpg" alt="sotano del barro" width="150" height="100"></a>'},
 
 
 ];
