@@ -1,5 +1,7 @@
 <?php
-// subir.php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 
 // Datos de conexión
 $host = 'sql210.infinityfree.com';

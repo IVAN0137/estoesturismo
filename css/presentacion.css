@@ -11,6 +11,7 @@ body {
 .container {
     width: 90%;
     margin: 0 auto;
+    padding: 0 15px; /* Añadido margen interno */
 }
 
 header {
@@ -119,6 +120,8 @@ nav ul li a:active {
 
 h1, h2, h3 {
     color: #2a9d8f;
+    margin-left: 15px; /* Añadido margen izquierdo */
+    margin-right: 15px; /* Añadido margen derecho */
 }
 
 h1 {
@@ -140,7 +143,7 @@ header nav ul li {
 }
 
 main {
-    margin-top: 20px;
+    margin: 20px 15px; /* Añadido margen */
 }
 
 main h2 {
@@ -152,6 +155,7 @@ main p {
     text-align: justify;
     line-height: 1.6;
     margin: 20px 0;
+    padding: 0 15px; /* Añadido margen interno */
 }
 
 .attraction {
@@ -171,7 +175,7 @@ main p {
 }
 
 .attraction:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05); /* Ajustado para una animación más sutil */
     filter: brightness(80%);
 }
 
@@ -187,6 +191,7 @@ main p {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out;
+    z-index: 2; /* Añadido para asegurar la jerarquía correcta */
 }
 
 .attraction:hover .description {
@@ -198,7 +203,7 @@ footer {
     background-color: #264653;
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px 15px; /* Añadido margen interno */
     margin-top: 40px;
 }
 
@@ -224,3 +229,4 @@ footer p {
         max-width: 100%;
     }
 }
+    

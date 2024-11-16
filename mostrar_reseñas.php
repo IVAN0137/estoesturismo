@@ -1,5 +1,7 @@
 <?php
-// mostrar_reseñas.php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 
 $host = 'sql210.infinityfree.com';
 $dbName = 'if0_37315282_turismo';
