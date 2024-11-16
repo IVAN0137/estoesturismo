@@ -1,9 +1,10 @@
 <?php
-// Conexión a la base de datos
-$host = 'sql210.infinityfree.com';  // Cambia 'sqlxxxx' por el valor de tu servidor MySQL
-$usuario = 'if0_37315282'; // Cambia por tu usuario MySQL
-$contraseña = 'MAGI020601'; // Cambia por tu contraseña MySQL
-$base_de_datos = 'if0_37315282_foro_fotos';
+
+
+$host = 'sql210.infinityfree.com'; 
+$user = 'if0_37315282';         
+$pass = 'MAGI020601';      
+$db = 'if0_37315282_foro_fotos';
 
 $conn = new mysqli($host, $usuario, $contraseña, $base_de_datos);
 
