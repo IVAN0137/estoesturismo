@@ -1,23 +1,28 @@
 <?php
 
+// Datos de conexión a la base de datos proporcionados por InfinityFree
+$host = 'sql210.infinityfree.com'; // Servidor MySQL
+$user = 'if0_37315282';           // Usuario de la base de datos
+$pass = 'MAGI020601';             // Contraseña de la base de datos
+$db = 'if0_37315282_foro_fotos';  // Nombre de la base de datos
 
-$host = 'sql210.infinityfree.com'; 
-$user = 'if0_37315282';         
-$pass = 'MAGI020601';      
-$db = 'if0_37315282_foro_fotos';
+// Crear conexión
+$conn = new mysqli($host, $user, $pass, $db);
 
-$conn = new mysqli($host, $usuario, $contraseña, $base_de_datos);
-
+// Verificar la conexión
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
+// Establecer el conjunto de caracteres de la conexión para manejar caracteres especiales
+$conn->set_charset("utf8mb4");
+
 // Subida de foto
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nombre_fotografo = $_POST['nombre_fotografo'];
-    $reseña = $_POST['reseña'];
-    $lugar = $_POST['lugar'];
-    $fecha = $_POST['fecha'];
+    $nombre_fotografo = $conn->real_escape_string($_POST['nombre_fotografo']);
+    $reseña = $conn->real_escape_string($_POST['reseña']);
+    $lugar = $conn->real_escape_string($_POST['lugar']);
+    $fecha = $conn->real_escape_string($_POST['fecha']);
 
     // Subir archivo
     $target_dir = "uploads/";
@@ -38,9 +43,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-// Obtener publicaciones
-$sql = "SELECT * FROM publicaciones ORDER BY fecha DESC";
+$sql = "SELECT * FROM publicaciones ORDER BY fecha DESC"; // Aquí es donde cambia el orden
 $result = $conn->query($sql);
+
 
 ?>
 
@@ -58,7 +63,7 @@ $result = $conn->query($sql);
     <!-- Formulario para subir foto -->
     <section>
         <h2>Sube tu Foto y Reseña</h2>
-        <form action="index.php" method="POST" enctype="multipart/form-data">
+        <form action="foro.php" method="POST" enctype="multipart/form-data">
             <label for="nombre_fotografo">Nombre del fotógrafo:</label>
             <input type="text" id="nombre_fotografo" name="nombre_fotografo" required>
 
@@ -101,7 +106,19 @@ $result = $conn->query($sql);
         ?>
     </section>
 
-    
+    <script>
+        // Función para llenar la fecha del sistema en el campo correspondiente
+        function llenarFecha() {
+            var fechaHoy = new Date().toISOString().split('T')[0]; // Fecha en formato YYYY-MM-DD
+            document.getElementById('fecha').value = fechaHoy;
+        }
+
+        // Ejecutar la función cuando la página se cargue
+        window.onload = function() {
+            llenarFecha(); // Llenar la fecha automáticamente
+        };
+    </script>
+
 </body>
 </html>
 
