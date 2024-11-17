@@ -4,10 +4,10 @@ $username = "root";
 $password = "";
 $dbname = "hotel";
 
-// Conexion a la base de datos
+// Conexión a la base de datos
 $conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn-> connect_error) {
-    die("Conexion fallida: " . $conn->connect_error);
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
 }
 
 // Variables del formulario
@@ -23,16 +23,16 @@ $foto = $_FILES['foto']['name'];
 $foto_tmp = $_FILES['foto']['tmp_name'];
 $foto_path = "uploads/" . basename($foto);
 
-// mover la imagen a la carpeta "uploads"
+// Verifica si se ha subido la imagen correctamente
 if (move_uploaded_file($foto_tmp, $foto_path)) {
-    // Insertar los datos en la base de datos
-    $sql = "INSERT INTO hotel (nombre,colonia,municipio,telefono, correo, descripcion, foto)
-    VALUES ('$nombre', '$colonia', '$municipio', '$telefono', '$correo', '$descripcion', '$foto')";
+    // Insertar los datos en la tabla "hotel"
+    $sql = "INSERT INTO hotel (nombre, colonia, municipio, telefono, correo, descripcion, foto)
+            VALUES ('$nombre', '$colonia', '$municipio', '$telefono', '$correo', '$descripcion', '$foto')";
 
-    if($conn->query($sql) === TRUE) {
+    if ($conn->query($sql) === TRUE) {
         echo json_encode(['success' => true]);
     } else {
-        echo json_encode(['success' => false, 'message' => 'Error al guardar en la base de datos']);
+        echo json_encode(['success' => false, 'message' => 'Error al guardar en la base de datos: ' . $conn->error]);
     }
 } else {
     echo json_encode(['success' => false, 'message' => 'Error al subir la imagen']);
