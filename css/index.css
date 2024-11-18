@@ -4,8 +4,94 @@ body {
     margin: 0;
     padding: 0;
     background-color: #bfcfdc;
-    transition: background-color 1s ease-in-out;
+    transition: background-color 1s ease-in-out;}
+    
+/*estilo para el preloader*/
+
+    
+
+/* Estilos del preloader con texto "Cargando..." */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
+
+.loader {
+    color: #FFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 48px;
+    letter-spacing: 4px;
+    animation: typing 3s steps(10) 1s forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 200px;  /* Ajusta el tamaño según lo necesites */
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Estilos para el contenido principal */
+#content {
+    display: none;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 36px;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
 @font-face{
     font-family: 'rush';
     src: url(/fonts/rush.ttf);
