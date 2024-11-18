@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'rush', sans-serif;
     margin: 0;
     padding: 20px;
     background-color: #f4f4f4;
@@ -50,4 +50,11 @@ a {
     text-align: center;
     margin-top: 20px;
     font-size: 1.2em;
+}
+@font-face{
+    font-family: 'rush';
+    src: url(/fonts/rush.ttf);
+    font-weight: bold;
+    font-style: italic;
+
 }

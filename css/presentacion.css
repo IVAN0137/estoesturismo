@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'rush', sans-serif;
     background-color: #f4f4f9;
     margin: 0;
     padding: 0;
@@ -228,5 +228,12 @@ footer p {
     .attraction img {
         max-width: 100%;
     }
+}
+@font-face{
+    font-family: 'rush';
+    src: url(/fonts/rush.ttf);
+    font-weight: bold;
+    font-style: italic;
+
 }
     

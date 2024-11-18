@@ -218,3 +218,10 @@ header img {
         padding: 20px;
     }
 }
+@font-face{
+    font-family: 'rush';
+    src: url(/fonts/rush.ttf);
+    font-weight: bold;
+    font-style: italic;
+
+}

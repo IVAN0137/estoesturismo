@@ -1,7 +1,7 @@
 /* estilos.css */
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'rush', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -112,4 +112,11 @@ button:hover {
     border: 1px solid #d6e9c6;
     border-radius: 5px;
     text-align: center;
+}
+@font-face{
+    font-family: 'rush';
+    src: url(/fonts/rush.ttf);
+    font-weight: bold;
+    font-style: italic;
+
 }

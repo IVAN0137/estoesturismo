@@ -1,6 +1,6 @@
 /* Estilos generales del cuerpo y la fuente */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'rush', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f7f6;
@@ -308,4 +308,11 @@ form .btn-submit:hover::after {
         font-size: 1rem;
         padding: 10px 20px;
     }
+}
+@font-face{
+    font-family: 'rush';
+    src: url(/fonts/rush.ttf);
+    font-weight: bold;
+    font-style: italic;
+
 }
