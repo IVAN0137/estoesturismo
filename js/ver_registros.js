@@ -1,3 +1,7 @@
+window.unload  = function(){
+    $('#preloader').fadeOut();
+    $('body').removeClass('hidden')
+}
 document.addEventListener('DOMContentLoaded', () => {
     const cardsContainer = document.getElementById('cards-container');
 
