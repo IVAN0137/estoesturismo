@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     editModal.style.display = 'block'; // Mostrar modal de edición
                 }
             })
-            .catch(error => console.error('Error:', error));
+            .catch(error => console.error('Error al obtener datos del hotel:', error));
     };
 
     // Manejar el envío del formulario para editar un hotel
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert('Error al editar el hotel');
                 }
             })
-            .catch(error => console.error('Error:', error));
+            .catch(error => console.error('Error al editar hotel:', error));
     });
 
     // Función para manejar la eliminación de un hotel
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert('Error al eliminar el hotel');
                 }
             })
-            .catch(error => console.error('Error:', error));
+            .catch(error => console.error('Error al eliminar hotel:', error));
     };
 
     // Filtrar hoteles por búsqueda
@@ -133,6 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Cargar guías cuando la página esté lista
+    // Cargar hoteles cuando la página esté lista
     loadhoteles();
 });

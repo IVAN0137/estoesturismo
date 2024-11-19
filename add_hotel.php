@@ -1,11 +1,11 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "hotel";
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db = "hotel";
 
 // Conexión a la base de datos
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
@@ -30,7 +30,7 @@ if (move_uploaded_file($foto_tmp, $foto_path)) {
             VALUES ('$nombre', '$colonia', '$municipio', '$telefono', '$correo', '$descripcion', '$foto')";
 
     if ($conn->query($sql) === TRUE) {
-        echo json_encode(['success' => true]);
+        echo json_encode(['success' => true, 'message' => 'Hotel agregado exitosamente']);
     } else {
         echo json_encode(['success' => false, 'message' => 'Error al guardar en la base de datos: ' . $conn->error]);
     }
