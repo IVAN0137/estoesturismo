@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/preloader.css">
     <link rel="icon" type="image/png" href="res/logo/MEXICO ESCONDIDO.png">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
@@ -14,6 +15,10 @@
 </head>
 
 <body>
+    <div id="preloader">
+        <div class="circle"></div>
+    </div>
+    <div id="contenido" style="display:none;"></div>
     <section>
         <!-- Cuadrados que llenan la pantalla -->
         <script>
@@ -37,6 +42,9 @@
 
             <input type="submit" value="Registrar">
         </form>
+    </div>
+
+    <script src="js/preloader.js"></script>
 
 </body>
 
