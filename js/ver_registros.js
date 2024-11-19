@@ -19,7 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h3>${guide.nombre}</h3>
                         <p><strong>Colonia:</strong> ${guide.colonia}</p>
                         <p><strong>Municipio:</strong> ${guide.municipio}</p>
-                        <p><strong>Teléfono:</strong> ${guide.telefono}</p>
+                        <p><strong>Teléfono:</strong> 
+                        <a href="https://wa.me/${guide.telefono}" target="_blank">
+                            ${guide.telefono}
+                        </a>
+                    </p>
                         <p><strong>Correo:</strong> ${guide.correo}</p>
                         <p>${guide.descripcion}</p>
                     `;
