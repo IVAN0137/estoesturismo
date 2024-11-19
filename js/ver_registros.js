@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </a>
                     </p>
                         <p><strong>Correo:</strong> 
-                        <a href="#" class="contact-email" data-email="${guide.correo}">
+                        <a href="https://mail.google.com/" class="contact-email" data-email="${guide.correo}" target="_blank>
                             ${guide.correo}
                         </a>
                     </p>
