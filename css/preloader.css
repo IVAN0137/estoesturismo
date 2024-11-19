@@ -1,0 +1,89 @@
+
+
+/* Estilos del preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Círculo animado con gradiente y rebote */
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #3498db, #9b59b6, #2ecc71, #f39c12);
+    background-size: 400% 400%;
+    animation: spin 1.5s linear infinite, pulse 1.5s ease-out infinite, gradient 5s ease infinite;
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.6), 0 0 30px rgba(155, 89, 182, 0.6), 0 0 40px rgba(46, 204, 113, 0.6);
+}
+
+/* Animación de rotación */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animación de pulsación (rebote) */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(52, 152, 219, 0.6), 0 0 30px rgba(155, 89, 182, 0.6), 0 0 40px rgba(46, 204, 113, 0.6);
+    }
+    50% {
+        transform: scale(1.2);
+        box-shadow: 0 0 30px rgba(52, 152, 219, 0.7), 0 0 50px rgba(155, 89, 182, 0.7), 0 0 60px rgba(46, 204, 113, 0.7);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(52, 152, 219, 0.6), 0 0 30px rgba(155, 89, 182, 0.6), 0 0 40px rgba(46, 204, 113, 0.6);
+    }
+}
+
+/* Animación de gradiente (cambio de color continuo) */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Estilos para el contenido de la página */
+#contenido {
+    text-align: center;
+    display: none;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+p {
+    font-size: 16px;
+    color: #777;
+}
+
+@font-face{
+    font-family: 'rush';
+    src: url(/fonts/rush.ttf);
+    font-weight: bold;
+    font-style: italic;
+
+}
