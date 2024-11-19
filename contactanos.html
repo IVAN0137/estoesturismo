@@ -6,12 +6,20 @@
     <title>Catálogo de Guías Turísticos</title>
     <link rel="stylesheet" href="css/contactanos.css">
     <link rel="stylesheet" href="css/fuentes.css">
+    <link rel="stylesheet" href="css/preloader.css">
     <link rel="icon" type="image/png" href="res/logo/MEXICO ESCONDIDO.png">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 </head>
 <body>
+    <div id="preloader">
+        <div class="preloader-wrapper">
+            <img src="res/botones/zorro.png" alt="Cargando..." class="preloader-image">
+            <p class="preloader-text">Cargando, por favor...</p>
+        </div>
+    </div>
+    <div id="content" style="display: none;">
     <header>
         <div class="container">
             <h1>Catálogo de Guías Turísticos</h1>
@@ -120,7 +128,8 @@
             </form>
         </div>
     </main>
-
+</div>
     <script src="js/contactanos.js"></script>
+    <script src="js/preloader.js"></script>
 </body>
 </html>

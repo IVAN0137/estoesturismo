@@ -1,12 +1,12 @@
-// preloader.js
-
-window.addEventListener('load', function() {
+// Esperar a que la página cargue completamente
+window.addEventListener('load', function () {
     const preloader = document.getElementById('preloader');
+    preloader.style.opacity = '0'; // Hacerlo transparente
+    preloader.style.visibility = 'hidden'; // Ocultarlo completamente
+
+    // Mostrar el contenido de la página
     const content = document.getElementById('content');
-    
-    // Retraso para asegurar que la animación del preloader se vea antes de ocultarlo
-    setTimeout(function() {
-        preloader.style.display = 'none';  // Ocultar el preloader
-        content.style.display = 'block';   // Mostrar el contenido principal
-    }, 500); // 500ms de retraso para la animación
+    setTimeout(() => {
+        content.style.display = 'block';
+    }, 400); // Coincidir con la transición del preloader
 });

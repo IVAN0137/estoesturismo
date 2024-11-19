@@ -1,89 +1,104 @@
-
-
-/* Estilos del preloader */
+/* Fondo del preloader */
 #preloader {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 30, 30, 0.9); /* Fondo oscuro con opacidad */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-/* Círculo animado con gradiente y rebote */
+/* Contenedor del preloader */
+.preloader-wrapper {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Círculo animado con borde luminoso y rotación */
 .circle {
+    position: absolute;
     width: 100px;
     height: 100px;
+    border: 4px solid transparent;
+    border-top: 4px solid #00c3ff; /* Azul claro */
     border-radius: 50%;
-    background: linear-gradient(45deg, #3498db, #9b59b6, #2ecc71, #f39c12);
-    background-size: 400% 400%;
-    animation: spin 1.5s linear infinite, pulse 1.5s ease-out infinite, gradient 5s ease infinite;
-    box-shadow: 0 0 20px rgba(52, 152, 219, 0.6), 0 0 30px rgba(155, 89, 182, 0.6), 0 0 40px rgba(46, 204, 113, 0.6);
+    animation: spin 1.5s linear infinite, glow 2s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(0, 195, 255, 0.5), 
+                0 0 40px rgba(0, 195, 255, 0.3), 
+                0 0 60px rgba(0, 195, 255, 0.1); /* Efecto luminoso */
 }
 
-/* Animación de rotación */
+/* Imagen central con rotación */
+.preloader-image {
+    width: 60px;
+    height: 60px;
+    animation: rotate 2s linear infinite; /* Rotación suave */
+    z-index: 10; /* Asegura que esté encima del círculo */
+    filter: drop-shadow(0 0 10px #00c3ff); /* Sombra luminosa en la imagen */
+}
+
+/* Texto del preloader */
+.preloader-text {
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    animation: fadeIn 1.5s ease-in-out;
+    opacity: 0;
+    margin-top: 20px;
+}
+
+/* Animaciones */
 @keyframes spin {
-    0% {
+    from {
         transform: rotate(0deg);
     }
-    100% {
+    to {
         transform: rotate(360deg);
     }
 }
 
-/* Animación de pulsación (rebote) */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 20px rgba(52, 152, 219, 0.6), 0 0 30px rgba(155, 89, 182, 0.6), 0 0 40px rgba(46, 204, 113, 0.6);
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg); /* Rotación inversa */
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(0, 195, 255, 0.5), 
+                    0 0 40px rgba(0, 195, 255, 0.3), 
+                    0 0 60px rgba(0, 195, 255, 0.1);
     }
     50% {
-        transform: scale(1.2);
-        box-shadow: 0 0 30px rgba(52, 152, 219, 0.7), 0 0 50px rgba(155, 89, 182, 0.7), 0 0 60px rgba(46, 204, 113, 0.7);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 20px rgba(52, 152, 219, 0.6), 0 0 30px rgba(155, 89, 182, 0.6), 0 0 40px rgba(46, 204, 113, 0.6);
+        box-shadow: 0 0 30px rgba(0, 195, 255, 0.7), 
+                    0 0 50px rgba(0, 195, 255, 0.5), 
+                    0 0 70px rgba(0, 195, 255, 0.3);
     }
 }
 
-/* Animación de gradiente (cambio de color continuo) */
-@keyframes gradient {
+@keyframes fadeIn {
     0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
+        opacity: 0;
     }
     100% {
-        background-position: 0% 50%;
+        opacity: 1;
     }
 }
 
-/* Estilos para el contenido de la página */
-#contenido {
-    text-align: center;
-    display: none;
-}
-
-h1 {
-    font-size: 24px;
-    color: #333;
-}
-
-p {
-    font-size: 16px;
-    color: #777;
-}
-
-@font-face{
-    font-family: 'rush';
-    src: url(/fonts/rush.ttf);
-    font-weight: bold;
-    font-style: italic;
-
+/* Ocultar el preloader después de cargar */
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
 }

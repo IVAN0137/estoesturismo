@@ -2,3 +2,9 @@ body {
     font-family: 'rush', sans-serif;
     
 }
+@font-face {
+    font-family: 'rush';
+    src: url('/fonts/rush.ttf') format('truetype'); /* Ajusta la ruta según tu proyecto */
+    font-weight: normal;
+    font-style: normal;
+}
