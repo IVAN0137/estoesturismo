@@ -80,7 +80,10 @@ var markers = [
     { coords: [21.4467664,-99.6321278], name: 'ARBOL MILENARIO Y NACIMIENTOS DE CONCA', popup: '<a href="arroyoseco.html"><b>ARBOL MILENARIO Y NACIMIENTOS DE CONCA</b><br><img src="res/arroyo seco/arbol.jpeg" alt="arbol milenario y nacimientos de conca" width="150" height="100"></a>'},
     { coords: [21.3560202,-99.7485061], name: ' SOTANO DEL BARRO', popup: '<a href="arroyoseco.html"><b>SOTANO DEL BARRO</b><br><img src="res/arroyo seco/sotano.jpg" alt="sotano del barro" width="150" height="100"></a>'},
 
-
+// peñamiller"
+{ coords: [21.0589, -99.8163], name: ' PEÑAMILLER', popup: '<a href="peñamiller.html"><b>PEÑAMILLER</b><br><img src="res/peñamiller/peñamiller.jpeg" alt="peñamiller" width="150" height="100"></a>'},
+{ coords: [21.0000173,-99.7104338], name: 'BALNERIO EL OASIS', popup: '<a href="peñamiller.html"><b>BALNEARIO EL OASIS</b><br><img src="res/peñamiller/Balneario.jpg" alt="balneario el paraiso" width="150" height=" 100"></a>'},
+{ coords: [21.020980, -99.699683], name: ' CAÑON DEL PARAISO', popup: '<a href="peñamiller.html"><b>CAÑON DEL PARAISO</b><br><img src="res/peñamiller/paraiso.jpg" alt="cañon del paraiso" width="150" height=" 100"></a>'},
 ];
 
 // Crear marcadores y añadir eventos
