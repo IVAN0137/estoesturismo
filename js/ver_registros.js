@@ -19,12 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h3>${guide.nombre}</h3>
                         <p><strong>Colonia:</strong> ${guide.colonia}</p>
                         <p><strong>Municipio:</strong> ${guide.municipio}</p>
+                        
                         <p><strong>Teléfono:</strong> 
                         <a href="https://wa.me/${guide.telefono}" target="_blank">
                             ${guide.telefono}
                         </a>
                     </p>
-                        <p><strong>Correo:</strong> ${guide.correo}</p>
+                        <p><strong>Correo:</strong> 
+                        <a href="#" class="contact-email" data-email="${guide.correo}">
+                            ${guide.correo}
+                        </a>
+                    </p>
                         <p>${guide.descripcion}</p>
                     `;
                     cardsContainer.appendChild(card);
@@ -36,3 +41,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Cargar guías cuando la página esté lista
     loadGuides();
 });
+
