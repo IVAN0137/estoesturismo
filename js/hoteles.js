@@ -5,13 +5,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardsContainer = document.getElementById('cards-container');
     const editModal = document.getElementById('edit-modal'); // Modal de edición
 
+    const API_URL = "hoteles.php";
+
     // Función para cargar hoteles
-    const loadhoteles = () => {
-        fetch('get_hoteles.php')
+    const loadHotels = () => {
+        fetch(`${API_URL}?action=get`)
             .then(response => response.json())
             .then(data => {
                 cardsContainer.innerHTML = ''; // Limpiar el contenedor de tarjetas
-                data.hotel.forEach(hotel => {
+                data.forEach(hotel => {
                     const card = document.createElement('div');
                     card.classList.add('card');
                     card.innerHTML = `
@@ -22,8 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p><strong>Teléfono:</strong> ${hotel.telefono}</p>
                         <p><strong>Correo:</strong> ${hotel.correo}</p>
                         <p>${hotel.descripcion}</p>
-                        <button class="edit-btn" data-id="${hotel.id}">Editar</button>
-                        <button class="delete-btn" data-id="${hotel.id}">Eliminar</button>
+                        <div class="card-actions">
+                            <button class="edit-btn" data-id="${hotel.id}">Editar</button>
+                            <button class="delete-btn" data-id="${hotel.id}">Eliminar</button>
+                        </div>
                     `;
                     cardsContainer.appendChild(card);
                 });
@@ -45,15 +49,15 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const formData = new FormData(form);
 
-        fetch('add_hotel.php', {
+        fetch(`${API_URL}?action=add`, {
             method: 'POST',
-            body: formData
+            body: formData,
         })
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
                     form.reset(); // Limpiar el formulario
-                    loadhoteles();  // Volver a cargar los hoteles
+                    loadHotels(); // Volver a cargar los hoteles
                 } else {
                     alert(data.message || 'Error al agregar el hotel');
                 }
@@ -65,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const handleEditClick = (e) => {
         const id = e.target.dataset.id;
 
-        fetch(`get_hotel.php?id=${id}`)
+        fetch(`${API_URL}?action=getById&id=${id}`)
             .then(response => response.json())
             .then(hotel => {
                 if (hotel) {
@@ -87,15 +91,15 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const formData = new FormData(editForm);
 
-        fetch('edit_hotel.php', {
+        fetch(`${API_URL}?action=edit`, {
             method: 'POST',
-            body: formData
+            body: formData,
         })
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
                     editModal.style.display = 'none'; // Cerrar modal de edición
-                    loadhoteles(); // Volver a cargar hoteles
+                    loadHotels(); // Volver a cargar hoteles
                 } else {
                     alert('Error al editar el hotel');
                 }
@@ -107,11 +111,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const handleDeleteClick = (e) => {
         const id = e.target.dataset.id;
 
-        fetch(`delete_hotel.php?id=${id}`)
+        fetch(`${API_URL}?action=delete&id=${id}`, {
+            method: 'DELETE',
+        })
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    loadhoteles(); // Volver a cargar hoteles después de eliminar uno
+                    loadHotels(); // Volver a cargar hoteles después de eliminar uno
                 } else {
                     alert('Error al eliminar el hotel');
                 }
@@ -134,5 +140,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Cargar hoteles cuando la página esté lista
-    loadhoteles();
+    loadHotels();
 });
