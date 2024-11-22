@@ -1,13 +1,15 @@
 <?php
 $host = "localhost";
-$username = "root";
-$password = "";
-$dbname = "hotel";
+$user = "root";
+$pass = "";
+$db = "hotel";
 
-$conn = new mysqli($host, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo json_encode(['status' => 'error', 'message' => 'Error de conexión: ' . $e->getMessage()]);
+    exit();
 }
 
 $id = $_GET['id'];

@@ -4,24 +4,27 @@ $user = "root";
 $pass = "";
 $db = "hotel";
 
-$conn = new mysqli($host, $user, $pass, $db);
+try {
+    // Conexión a la base de datos
+    $conn = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+    // Consulta a la base de datos
+    $sql = "SELECT * FROM hotel";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+
+    // Obtención de resultados como un array asociativo
+    $hotel = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // Enviar respuesta en formato JSON
+    header('Content-Type: application/json');
+    echo json_encode(['hotel' => $hotel]);
+
+} catch (PDOException $e) {
+    // Manejo de errores
+    header('Content-Type: application/json');
+    echo json_encode(['status' => 'error', 'message' => 'Error de conexión: ' . $e->getMessage()]);
+    exit();
 }
-
-$sql = "SELECT * FROM hotel";
-$result = $conn->query($sql);
-
-$hotel = [];
-
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $hotel[] = $row;
-    }
-}
-
-echo json_encode(['hotel' => $hotel]);
-
-$conn->close();
 ?>
