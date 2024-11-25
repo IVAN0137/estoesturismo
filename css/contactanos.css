@@ -301,10 +301,3 @@ form .btn-submit:hover::after {
         padding: 10px 20px;
     }
 }
-@font-face{
-    font-family: 'rush';
-    src: url(/fonts/rush.ttf);
-    font-weight: bold;
-    font-style: italic;
-
-}
