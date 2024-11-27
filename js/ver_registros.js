@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${guide.correo}
                         </a>
                     </p>
+
                         <p>${guide.descripcion}</p>
                     `;
                     cardsContainer.appendChild(card);
