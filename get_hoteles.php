@@ -1,30 +1,27 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "hotel";
+$servername = "sql210.infinityfree.com";
+$username = "if0_37315282";
+$password = "MAGI020601"; 
+$dbname = "if0_37315282_hoteles";
 
-try {
-    // Conexión a la base de datos
-    $conn = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Consulta a la base de datos
-    $sql = "SELECT * FROM hotel";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-
-    // Obtención de resultados como un array asociativo
-    $hotel = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    // Enviar respuesta en formato JSON
-    header('Content-Type: application/json');
-    echo json_encode(['hotel' => $hotel]);
-
-} catch (PDOException $e) {
-    // Manejo de errores
-    header('Content-Type: application/json');
-    echo json_encode(['status' => 'error', 'message' => 'Error de conexión: ' . $e->getMessage()]);
-    exit();
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
 }
+
+$sql = "SELECT * FROM hotel";
+$result = $conn->query($sql);
+
+$hotel = [];
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $hotel[] = $row;
+    }
+}
+
+echo json_encode(['hotel' => $hotel]);
+
+$conn->close();
 ?>
