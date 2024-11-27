@@ -7,11 +7,18 @@
     <title>Quiénes Somos</title>
     <link rel="stylesheet" href="css/nosotrossomos.css">
     <link rel="stylesheet" href="css/fuentes.css">
+    <link rel="stylesheet" href="css/preloader.css">
     <link rel="icon" type="image/png" href="res/logo/MEXICO ESCONDIDO.png">
 
 </head>
 <body>
-
+    <div id="preloader">
+        <div class="preloader-wrapper">
+            <img src="res/botones/zorro.png" alt="Cargando..." class="preloader-image">
+            <p class="preloader-text">Cargando, por favor espera...</p>
+        </div>
+     </div>
+     <div id="content" style="display: none;">
     <header>
         <div><h1>Quiénes Somos</h1></div>
         <div><img src="res/logo/MEXICO ESCONDIDO.png" alt="logo" width="250px" height="250px"></div>
@@ -22,7 +29,8 @@
         <section>
             <h2 class="section-title">Nuestra Misión</h2>
             <div class="section-contentt">
-                <p>Nuestra misión <p>
+                <p>Nuestra misión es dar a conocer lugares turiscos que no son reconocidos a nivel nacional en mexico,
+                    principalmente le estamos dando prioridad a lo que es la sierra gorda queretana <p>
             </div>
         </section>
 
@@ -56,14 +64,16 @@
 
         <section class="mission">
             <h2 class="section-title">Nuestra Visión</h2>
-            <p></p>
+            <div  class="section-content">
+            <p>la vision es que tengan</p>
+        </div >
         </section>
     </div>
 
     <footer class="footer">
         <p>&copy; 2024 Todos los derechos reservados</p>
     </footer>
-
-    <script src=""></script> <!-- Si decides agregar funcionalidad JavaScript -->
+</div>
+    <script src="js/preloader.js"></script> 
 </body>
 </html>

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pinal de Amoles - Un Rincón de Belleza Natural</title>
     <link rel="stylesheet" href="css/presentacion.css">
+    <link rel="stylesheet" href="css/preloader.css">
+    <link rel="stylesheet" href="css/fuentes.css">
     <link rel="icon" type="image/png" href="res/logo/MEXICO ESCONDIDO.png">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
@@ -12,6 +14,13 @@
     
 </head>
 <body>
+    <div id="preloader">
+        <div class="preloader-wrapper">
+            <img src="res/botones/zorro.png" alt="Cargando..." class="preloader-image">
+            <p class="preloader-text">Cargando, por favor espera...</p>
+        </div>
+     </div>
+    <div id="content" style="display: none;">
     <header><div class="container">
         <img src="res/logo/MEXICO ESCONDIDO.png" alt="Logo" class="logo">
     </div></header>
@@ -175,7 +184,9 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Detodoturismo. Todos los derechos reservados.</p>
+        <p>&copy; 2024 MÉXICO ESCONDIDO. Todos los derechos reservados.</p>
     </footer>
+</div>
+<script src="js/preloader.js"></script>
 </body>
 </html>

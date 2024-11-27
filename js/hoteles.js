@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const editModal = document.getElementById('edit-modal'); // Modal de edición
 
     // Función para cargar hoteles
-    const loadhoteles = () => {
+    const loadHoteles = () => {
         fetch('get_hoteles.php')
             .then(response => response.json())
             .then(data => {
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 if (data.success) {
                     form.reset(); // Limpiar el formulario
-                    loadhoteles();  // Volver a cargar los hoteles
+                    loadHoteles();  // Volver a cargar los hoteles
                 } else {
                     alert(data.message || 'Error al agregar el hotel');
                 }
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 if (data.success) {
                     editModal.style.display = 'none'; // Cerrar modal de edición
-                    loadhoteles(); // Volver a cargar hoteles
+                    loadHoteles(); // Volver a cargar hoteles
                 } else {
                     alert('Error al editar el hotel');
                 }
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    loadhoteles(); // Volver a cargar hoteles después de eliminar uno
+                    loadHoteles(); // Volver a cargar hoteles después de eliminar uno
                 } else {
                     alert('Error al eliminar el hotel');
                 }
@@ -134,5 +134,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Cargar guías cuando la página esté lista
-    loadhoteles();
+    loadHoteles();
 });

@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "hotel";
+$servername = "sql210.infinityfree.com";
+$username = "if0_37315282";
+$password = "MAGI020601"; 
+$dbname = "if0_37315282_hoteles";
 
 // Conexión a la base de datos
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -23,16 +23,16 @@ $foto = $_FILES['foto']['name'];
 $foto_tmp = $_FILES['foto']['tmp_name'];
 $foto_path = "uploads/" . basename($foto);
 
-// Verifica si se ha subido la imagen correctamente
+// Mover la imagen a la carpeta "uploads"
 if (move_uploaded_file($foto_tmp, $foto_path)) {
-    // Insertar los datos en la tabla "hotel"
+    // Insertar los datos en la base de datos
     $sql = "INSERT INTO hotel (nombre, colonia, municipio, telefono, correo, descripcion, foto)
             VALUES ('$nombre', '$colonia', '$municipio', '$telefono', '$correo', '$descripcion', '$foto')";
 
     if ($conn->query($sql) === TRUE) {
         echo json_encode(['success' => true]);
     } else {
-        echo json_encode(['success' => false, 'message' => 'Error al guardar en la base de datos: ' . $conn->error]);
+        echo json_encode(['success' => false, 'message' => 'Error al guardar en la base de datos']);
     }
 } else {
     echo json_encode(['success' => false, 'message' => 'Error al subir la imagen']);
