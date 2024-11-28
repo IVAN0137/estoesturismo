@@ -1,5 +1,5 @@
 body {
-    font-family: 'dashi', sans-serif;
+    font-family: 'bubble', sans-serif;
     
 }
 @font-face {
@@ -24,6 +24,18 @@ body {
 @font-face {
     font-family: 'dashi' ;
     src: url('/fonts/Dashing.ttf')format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'bubble';
+    src: url('/fonts/bubble.otf')format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'avada';
+    src: url('/fonts/AVADA.ttf')format('truetype');
     font-weight: normal;
     font-style: normal;
 }
