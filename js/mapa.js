@@ -23,7 +23,7 @@ const dangerIcon = L.icon({
     iconUrl: 'https://cdn-icons-png.flaticon.com/512/1828/1828843.png', // URL del ícono de advertencia
     iconSize: [20, 20], // Tamaño del ícono
     iconAnchor: [12, 12], // Punto del ícono que corresponde a la posición en el mapa
-    popupAnchor: [0, -100] // Punto desde donde aparece el popup
+    popupAnchor: [0, -10] // Punto desde donde aparece el popup
 });
 
 
@@ -31,12 +31,13 @@ const dangerIcon = L.icon({
 // Lista de gasolineras con coordenadas y detalles
 const gasStationMarkers = L.layerGroup();
 const gasStations = [
-    { coords: [21.131,-99.631], popup: 'Gasolinera Mobil.' },
-    { coords: [21.214, -99.538], popup: 'Gasolinera GASHA Ahuacatlan.' },
-    { coords: [21.215, -99.467], popup: 'Gasolinera PEMEX.' },
-    { coords: [21.234, -99.478], popup: 'Gasolinera PEMEX.' },
-    { coords: [21.389,-98.985], popup: 'Gasolinera PEMEX Xilitla.' },
+    { coords: [21.13083163678038, -99.63114538214953], popup: 'Gasolinera Mobil.' },
+    { coords: [21.214188384847397, -99.53798380356483], popup: 'Gasolinera GASHA Ahuacatlan.' },
+    { coords: [21.21560286308035, -99.46765294456445], popup: 'Gasolinera PEMEX.' },
+    { coords: [21.23393292113271, -99.47900578379932], popup: 'Gasolinera PEMEX.' },
+    { coords: [21.38772168402627, -98.98567082721165], popup: 'Gasolinera PEMEX Xilitla.' },
     { coords: [21.45198949920952, -99.63237909484643], popup: 'Gasolinera Conca.' },
+    { coords: [21.24873224169572, -99.25959715278138], popup: 'Gasolinera servicio Zaragoza.' },
 
 
 ];
@@ -45,24 +46,19 @@ const gasStations = [
 // Crear un grupo para marcadores de zonas de riesgo
 const dangerMarkers = L.layerGroup();
 const dangerZones = [
-    { coords: [21.138, -99.620], // Coordenadas del señalamiento
-      popup: '¡Precaución! Riesgo de deslizamientos de tierra.'},
-    { coords: [21.136, -99.625], // Coordenadas del señalamiento
-      popup: '¡Cuidado! Curva Peligrosa.'},
-    { coords: [21.138, -99.620], // Coordenadas del señalamiento
-      popup: 'Zona con riesgo de caídas de rocas.'}, 
-    { coords: [21.204, -99.474], // Coordenadas del señalamiento
-      popup: 'Zona con riesgo de Ahogamiento.'}, 
-    { coords: [21.135, -99.628], // Coordenadas del señalamiento
-      popup: 'Zona Peatonal.'}, 
-    { coords: [21.167, -99.556], // Coordenadas del señalamiento
-      popup: 'Zona de ahogamiento.'}, 
-    { coords: [21.554, -99.330], // Coordenadas del señalamiento
-      popup: 'Zona de ahogamiento acceso solo con guia.'},
-    { coords: [21.273, -99.214], // Coordenadas del señalamiento
-        popup: 'carretera peligrosa.'},
-    { coords: [21.100, -99.621], // Coordenadas del señalamiento
-            popup: 'Zona de deslave.'},   
+    { coords: [21.138, -99.620], popup: '¡Precaución! Riesgo de deslizamientos de tierra.'},// Coordenadas del señalamiento
+    { coords: [21.136, -99.625], popup: '¡Cuidado! Curva Peligrosa.'},
+    { coords: [21.138, -99.620], popup: 'Zona con riesgo de caídas de rocas.'}, 
+    { coords: [21.17029231132112, -99.5578018018912], popup: 'Zona con riesgo de Ahogamiento.'}, 
+    { coords: [21.13571396306106, -99.62828753920036], popup: 'Zona Peatonal.'}, 
+    { coords: [21.184661857207146, -99.61142241977305], popup: 'Zona de ahogamiento.'}, 
+    { coords: [21.554, -99.330], popup: 'Zona de ahogamiento acceso solo con guia.'},
+    { coords: [21.273, -99.214], popup: 'carretera peligrosa.'},
+    { coords: [21.100, -99.621], popup: 'Zona de deslave.'},
+    { coords: [21.11609436726642, -99.66449495441528], popup: 'Curva Peligrosa.'},
+    { coords: [21.12177904094413, -99.65711351522576],popup: ' Zona de Niebla.'},
+
+                   
 ];
 // Añadir áreas destacadas con círculos para zonas de peligro
 // Crear un grupo para las áreas de peligro
@@ -71,12 +67,14 @@ const dangerAreasData = [
     { coords: [21.138, -99.620],color: 'red',radius: 200,popup: 'Zona de peligro: riesgo de deslizamientos.'},
     {coords: [21.187, -99.576],color: 'red',radius: 500, popup: 'Zona de peligro: Curva Peligrosa.'},
     { coords: [21.141, -99.620],color: 'yellow', radius: 200, popup: 'Zona de peligro: Zona de Niebla.'},
-    { coords: [21.204, -99.474], color: 'red', radius: 100, popup: 'Zona de peligro:Nadar con precaucion.'},
-    { coords: [21.135, -99.628], color: 'yellow', radius: 100, popup: 'Zona de peligro: Zona Peatonal.'},
-    { coords: [21.167, -99.556], color: 'orange', radius: 500, popup: 'Nadar con precaucion.'},
+    { coords: [21.17029231132112, -99.5578018018912], color: 'red', radius: 200, popup: 'Zona de peligro:Nadar con precaucion.'},
+    { coords: [21.13571396306106, -99.62828753920036], color: 'yellow', radius: 10, popup: 'Zona de peligro: Zona Peatonal.'},
+    { coords: [21.184661857207146, -99.61142241977305], color: 'orange', radius: 500, popup: 'Nadar con precaucion.'},
     { coords: [21.554, -99.330], color: 'orange',radius: 500,popup: 'Nadar con precaucion.'},
     { coords: [21.273, -99.214], color: 'orange',radius: 500,popup: 'Curva peligrosa.'},
     { coords: [21.273, -99.214], color: 'orange',radius: 500,popup: 'Maneje con precaucion.'},
+    { coords: [21.116414636360894, -99.66479536182186], color: 'orange',radius: 100,popup: 'Curva Peligrosa.'},
+    { coords: [21.12177904094413, -99.65711351522576],color: 'yellow', radius: 500, popup: 'Zona de peligro: Zona de Niebla.'},
 
 ];
 
