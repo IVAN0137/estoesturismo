@@ -10,6 +10,106 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 L.control.scale({
     position: 'topright'
 }).addTo(map);
+// Crear un ícono personalizado para gasolineras
+const gasStationIcon = L.icon({
+    iconUrl: 'https://cdn-icons-png.flaticon.com/512/2906/2906275.png', // URL del ícono de gasolinera
+    iconSize: [25, 25], // Tamaño del ícono
+    iconAnchor: [12, 25], // Punto del ícono que corresponde a la posición en el mapa
+    popupAnchor: [0, -20] // Punto desde donde aparece el popup
+});
+
+// Crear un ícono personalizado para zonas de riesgo
+const dangerIcon = L.icon({
+    iconUrl: 'https://cdn-icons-png.flaticon.com/512/1828/1828843.png', // URL del ícono de advertencia
+    iconSize: [20, 20], // Tamaño del ícono
+    iconAnchor: [12, 12], // Punto del ícono que corresponde a la posición en el mapa
+    popupAnchor: [0, -100] // Punto desde donde aparece el popup
+});
+
+
+
+// Lista de gasolineras con coordenadas y detalles
+const gasStationMarkers = L.layerGroup();
+const gasStations = [
+    { coords: [21.131,-99.631], popup: 'Gasolinera Mobil.' },
+    { coords: [21.214, -99.538], popup: 'Gasolinera GASHA Ahuacatlan.' },
+    { coords: [21.215, -99.467], popup: 'Gasolinera PEMEX.' },
+    { coords: [21.234, -99.478], popup: 'Gasolinera PEMEX.' },
+    { coords: [21.389,-98.985], popup: 'Gasolinera PEMEX Xilitla.' },
+    { coords: [21.45198949920952, -99.63237909484643], popup: 'Gasolinera Conca.' },
+
+
+];
+
+// Definir zonas de peligro
+// Crear un grupo para marcadores de zonas de riesgo
+const dangerMarkers = L.layerGroup();
+const dangerZones = [
+    { coords: [21.138, -99.620], // Coordenadas del señalamiento
+      popup: '¡Precaución! Riesgo de deslizamientos de tierra.'},
+    { coords: [21.136, -99.625], // Coordenadas del señalamiento
+      popup: '¡Cuidado! Curva Peligrosa.'},
+    { coords: [21.138, -99.620], // Coordenadas del señalamiento
+      popup: 'Zona con riesgo de caídas de rocas.'}, 
+    { coords: [21.204, -99.474], // Coordenadas del señalamiento
+      popup: 'Zona con riesgo de Ahogamiento.'}, 
+    { coords: [21.135, -99.628], // Coordenadas del señalamiento
+      popup: 'Zona Peatonal.'}, 
+    { coords: [21.167, -99.556], // Coordenadas del señalamiento
+      popup: 'Zona de ahogamiento.'}, 
+    { coords: [21.554, -99.330], // Coordenadas del señalamiento
+      popup: 'Zona de ahogamiento acceso solo con guia.'},
+    { coords: [21.273, -99.214], // Coordenadas del señalamiento
+        popup: 'carretera peligrosa.'},
+    { coords: [21.100, -99.621], // Coordenadas del señalamiento
+            popup: 'Zona de deslave.'},   
+];
+// Añadir áreas destacadas con círculos para zonas de peligro
+// Crear un grupo para las áreas de peligro
+const dangerAreas = L.layerGroup();
+const dangerAreasData = [
+    { coords: [21.138, -99.620],color: 'red',radius: 200,popup: 'Zona de peligro: riesgo de deslizamientos.'},
+    {coords: [21.187, -99.576],color: 'red',radius: 500, popup: 'Zona de peligro: Curva Peligrosa.'},
+    { coords: [21.141, -99.620],color: 'yellow', radius: 200, popup: 'Zona de peligro: Zona de Niebla.'},
+    { coords: [21.204, -99.474], color: 'red', radius: 100, popup: 'Zona de peligro:Nadar con precaucion.'},
+    { coords: [21.135, -99.628], color: 'yellow', radius: 100, popup: 'Zona de peligro: Zona Peatonal.'},
+    { coords: [21.167, -99.556], color: 'orange', radius: 500, popup: 'Nadar con precaucion.'},
+    { coords: [21.554, -99.330], color: 'orange',radius: 500,popup: 'Nadar con precaucion.'},
+    { coords: [21.273, -99.214], color: 'orange',radius: 500,popup: 'Curva peligrosa.'},
+    { coords: [21.273, -99.214], color: 'orange',radius: 500,popup: 'Maneje con precaucion.'},
+
+];
+
+// Añadir círculos al mapa
+dangerAreasData.forEach(area => {
+    L.circle(area.coords, {
+        color: area.color,
+        radius: area.radius,
+        fillColor: area.color,
+        fillOpacity: 0.3
+    }).addTo(dangerAreas).bindPopup(area.popup);
+    
+});
+
+gasStations.forEach(station => {
+    L.marker(station.coords, { icon: gasStationIcon })
+        .addTo(gasStationMarkers)
+        .bindPopup(station.popup);
+});
+// Añadir el control para mostrar/ocultar las capas de peligro
+const overlayMaps = {
+    "Áreas de peligro": dangerAreas,
+    "Gasolineras": gasStationMarkers
+   
+};
+L.control.layers(null, overlayMaps, { collapsed: false }).addTo(map);
+
+// Por defecto, no mostrar las capas de peligro
+map.removeLayer(dangerMarkers);
+map.removeLayer(dangerAreas);
+map.removeLayer(dangerIcon);
+
+
 
 var currentRoute = null;
 
@@ -58,6 +158,8 @@ var markers = [
     { coords: [21.268146966410278, -99.16365092394435], name: 'RODEO ECOTURISMO', popup:'<a href="landa.html"><b>RODEO ECOTURISMO</b><br><img src="res/landa/eco.jpg" alt="" width="150" height="100"></a>' },
     { coords: [21.1631931,-99.1937817], name: 'HURACAN DE LA SIERRA ', popup:'<a href="landa.html"><b>HURACAN DE LA SIERRA</b><br><img src="res/landa/huracandelasierra.jpg" alt="huracan de la sierra" width="150" height="100"></a>' },
 
+
+
     //xilitla
     { coords: [21.38647, -98.99201], name: 'XILITLA', popup:'<a href="xilitla.html"><b>XILITLA</b><br><img src="res/xilitla/xilitapaisaje.jpg" alt="xilitla" width="150" height="100"></a>' },
     { coords: [21.397589, -98.996505], name: 'JARDIN SURREALISTA DE EDWARD JAMES', popup: '<a href="xilitla.html"><b>JARDIN SURREALISTA DE EDWARD JAMES</b><br><img src="res/xilitla/jardinedward.jpg" alt="jardin de edward james" width="150" height="100"></a>' },
@@ -84,6 +186,7 @@ var markers = [
 { coords: [21.0589, -99.8163], name: ' PEÑAMILLER', popup: '<a href="peñamiller.html"><b>PEÑAMILLER</b><br><img src="res/peñamiller/peñamiller.jpeg" alt="peñamiller" width="150" height="100"></a>'},
 { coords: [21.0000173,-99.7104338], name: 'BALNERIO EL OASIS', popup: '<a href="peñamiller.html"><b>BALNEARIO EL OASIS</b><br><img src="res/peñamiller/Balneario.jpg" alt="balneario el paraiso" width="150" height=" 100"></a>'},
 { coords: [21.020980, -99.699683], name: ' CAÑON DEL PARAISO', popup: '<a href="peñamiller.html"><b>CAÑON DEL PARAISO</b><br><img src="res/peñamiller/paraiso.jpg" alt="cañon del paraiso" width="150" height=" 100"></a>'},
+
 ];
 
 // Crear marcadores y añadir eventos
@@ -91,6 +194,9 @@ markers.forEach(function(marker) {
     // Crear un marcador y añadirlo al mapa
     var leafletMarker = L.marker(marker.coords).addTo(map);
     leafletMarker.bindPopup(marker.popup);
+
+    
+    
 
     // Añadir a la lista de direcciones
     var listItem = document.createElement('li');
