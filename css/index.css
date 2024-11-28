@@ -36,7 +36,7 @@ h2{
 header {
     background: linear-gradient(135deg, rgba(26, 135, 179, 0.9), rgba(255, 255, 255, 0.9));
     color: #fff;
-    padding: 20px 0;
+    padding: 0px 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     border-bottom: 5px solid #246408;
     position: fixed;
@@ -102,7 +102,7 @@ main {
 
 section.welcome-section {
     background: linear-gradient(135deg, rgb(0, 204, 245), rgba(246, 255, 0, 0.9));
-    padding: 50px 0;
+    padding: 10px 2;
     box-shadow: 0 4px 12px rgb(0, 0, 0);
     border-radius: 90px;
     animation: fadeIn 2s ease-in-out;

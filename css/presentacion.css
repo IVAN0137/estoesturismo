@@ -10,7 +10,7 @@ body {
 .container {
     width: 90%;
     margin: 0 auto;
-    padding: 0 15px; /* Añadido margen interno */
+    padding: 0 15px; 
 }
 
 header {

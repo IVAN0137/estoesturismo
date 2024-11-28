@@ -1,5 +1,6 @@
 body {
-    font-family: 'bubble', sans-serif;
+    font-family: 'oceansolid', sans-serif;
+    font-size: 1.2em;
     
 }
 @font-face {
@@ -36,6 +37,12 @@ body {
 @font-face {
     font-family: 'avada';
     src: url('/fonts/AVADA.ttf')format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'chorun';
+    src: url('/fonts/CHORUN.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
