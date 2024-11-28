@@ -34,7 +34,8 @@ body {
     font-size: 48px;
     letter-spacing: 4px;
     display: inline-block;
-    border-right: 3px solid #FFF;  /* Cursor parpadeante */
+    border-right: 3px solid #FFF;
+    /* Cursor parpadeante */
     padding-right: 10px;
     animation: typing 3s steps(10) 1s forwards, blink 0.75s step-end infinite;
 }
@@ -42,17 +43,21 @@ body {
 /* Animación de escritura */
 @keyframes typing {
     from {
-        width: 0; /* Inicialmente, el texto está oculto */
+        width: 0;
+        /* Inicialmente, el texto está oculto */
     }
+
     to {
-        width: 100%; /* El texto "Cargando..." se muestra completamente */
+        width: 100%;
+        /* El texto "Cargando..." se muestra completamente */
     }
 }
 
 /* Animación de parpadeo del cursor */
 @keyframes blink {
     50% {
-        border-color: transparent; /* El cursor desaparece a la mitad */
+        border-color: transparent;
+        /* El cursor desaparece a la mitad */
     }
 }
 
@@ -97,10 +102,13 @@ h1 {
 /* Galería de tours */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));  /* Aumentamos el tamaño mínimo a 400px por ítem */
-    gap: 30px;  /* Aumentamos el espacio entre los ítems */
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    /* Aumentamos el tamaño mínimo a 400px por ítem */
+    gap: 30px;
+    /* Aumentamos el espacio entre los ítems */
     margin-top: 20px;
-    grid-auto-rows: minmax(250px, auto);  /* Mayor altura para los ítems */
+    grid-auto-rows: minmax(250px, auto);
+    /* Mayor altura para los ítems */
 }
 
 /* Estilo de cada item en la galería */
@@ -218,8 +226,22 @@ h1 {
     transform: translateY(0);
 }
 
+footer {
+    background-color: #264653;
+    color: white;
+    text-align: center;
+    padding: 20px 15px;
+    /* Añadido margen interno */
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
 /* Media Queries para dispositivos pequeños */
 @media (max-width: 768px) {
+
     /* Barra de búsqueda */
     #search-input {
         width: 90%;
@@ -227,7 +249,8 @@ h1 {
 
     /* Galería */
     .gallery {
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Ajuste el tamaño mínimo a 350px por ítem */
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        /* Ajuste el tamaño mínimo a 350px por ítem */
         gap: 20px;
     }
 
@@ -239,6 +262,7 @@ h1 {
 }
 
 @media (max-width: 480px) {
+
     /* Título principal */
     h1 {
         font-size: 1.8em;
@@ -251,7 +275,8 @@ h1 {
 
     /* Galería */
     .gallery {
-        grid-template-columns: 1fr; /* Una columna en dispositivos muy pequeños */
+        grid-template-columns: 1fr;
+        /* Una columna en dispositivos muy pequeños */
     }
 
     /* Títulos */
@@ -260,7 +285,8 @@ h1 {
         padding: 8px;
     }
 }
-@font-face{
+
+@font-face {
     font-family: 'rush';
     src: url(/fonts/rush.ttf);
     font-weight: bold;

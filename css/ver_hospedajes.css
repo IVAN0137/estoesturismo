@@ -363,6 +363,19 @@ nav ul li a:active {
     animation: fadeOut 0.6s forwards;
 }
 
+footer {
+    background-color: #264653;
+    color: white;
+    text-align: center;
+    padding: 20px 15px;
+    /* Añadido margen interno */
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
 /* Media Queries para pantallas pequeñas */
 @media (max-width: 768px) {
     header h1 {

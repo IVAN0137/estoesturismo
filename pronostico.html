@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,44 +9,48 @@
     <link rel="stylesheet" href="css/presentacion.css">
     <link rel="stylesheet" href="css/preloader.css">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<link rel="icon" type="image/png" href="res/logo/MEXICO ESCONDIDO.png">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="icon" type="image/png" href="res/logo/MEXICO ESCONDIDO.png">
 
 
 </head>
+
 <body>
     <div id="preloader">
         <div class="preloader-wrapper">
             <img src="res/botones/zorro.png" alt="Cargando..." class="preloader-image">
             <p class="preloader-text">Cargando, por favor espera...</p>
         </div>
-     </div>
+    </div>
     <div id="content" style="display: none;">
-    <header><div class="container">
-        <img src="res/logo/MEXICO ESCONDIDO.png" alt="Logo" class="logo">
-    </div></header>
+        <header>
+            <div class="container">
+                <img src="res/logo/MEXICO ESCONDIDO.png" alt="Logo" class="logo">
+            </div>
+        </header>
         <div class="container">
             <nav>
-                <ul> <li>
-                    <a href="index.html">
-                        <img src="res/botones/hogar.png" alt="Inicio" width="30px" height="30px">
-                        <span class="tooltip">Ir a la página de inicio</span>
-                    </a>
-                </li>
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <img src="res/botones/hogar.png" alt="Inicio" width="30px" height="30px">
+                            <span class="tooltip">Ir a la página de inicio</span>
+                        </a>
+                    </li>
                     <li>
                         <a href="mapa.html">
                             <img src="res/botones/lugar.png" alt="Destinos" width="30px" height="30px">
-                            
+
                             <span class="tooltip">Ver destinos disponibles</span>
                         </a>
                     </li>
                     <li>
-                    <a href="hoteles.html">
-                        <img src="res/botones/cabana.png" alt="hoteles" width="30px" height="30px">
-                        
-                        <span class="tooltip">Ver hoteles o cabañas</span>
-                    </a>
+                        <a href="hoteles.html">
+                            <img src="res/botones/cabana.png" alt="hoteles" width="30px" height="30px">
+
+                            <span class="tooltip">Ver hoteles o cabañas</span>
+                        </a>
 
                     </li>
                     <li>
@@ -54,11 +59,11 @@
                             <span class="tooltip">Ponte en contacto con un guia turístico</span>
                         </a>
                     </li>
-                    
+
                     <li>
                         <a href="foro.php">
                             <img src="res/botones/xp.png" alt="Comparte tu Experiencia" width="30px" height="30px">
-                            
+
                             <span class="tooltip">Comparte tu experiencia</span>
                         </a>
                     </li>
@@ -74,41 +79,48 @@
                             <span class="tooltip">Quiénes Somos?</span>
                         </a>
                     </li>
-                   
+
                 </ul>
             </nav>
-            
+
         </div>
-    
-    <header>
-    <div class="app">
-        <header class="header">
-            <h1>Clima Actual</h1>
-            <p>Obtén el clima en cualquier ciudad del mundo.</p>
-        </header>
-        <main>
-            <div class="input-group">
-                <input type="text" id="ciudad" placeholder="Introduce una ubicacion" aria-label="Nombre de ciudad">
-                <button id="buscarClima">Buscar Clima</button>
+
+        <header>
+            <div class="app">
+                <header class="header">
+                    <h1>Clima Actual</h1>
+                    <p>Obtén el clima en cualquier ciudad del mundo.</p>
+                </header>
+                <main>
+                    <div class="input-group">
+                        <input type="text" id="ciudad" placeholder="Introduce una ubicacion"
+                            aria-label="Nombre de ciudad">
+                        <button id="buscarClima">Buscar Clima</button>
+                    </div>
+                    <div id="resultado" class="resultado oculto">
+                        <h2 id="nombreCiudad"></h2>
+                        <div class="info-clima">
+                            <div id="descripcion" class="detalle"></div>
+                            <div id="temperatura" class="detalle"></div>
+                            <div id="humedad" class="detalle"></div>
+                            <div id="viento" class="detalle"></div>
+                        </div>
+                        <div id="icono" class="icono">
+                            <img id="iconoClima" src="" alt="Icono del clima">
+                        </div>
+                    </div>
+                    <div id="error" class="error oculto"></div>
+                </main>
+
             </div>
-            <div id="resultado" class="resultado oculto">
-                <h2 id="nombreCiudad"></h2>
-                <div class="info-clima">
-                    <div id="descripcion" class="detalle"></div>
-                    <div id="temperatura" class="detalle"></div>
-                    <div id="humedad" class="detalle"></div>
-                    <div id="viento" class="detalle"></div>
-                </div>
-                <div id="icono" class="icono">
-                    <img id="iconoClima" src="" alt="Icono del clima">
-                </div>
-            </div>
-            <div id="error" class="error oculto"></div>
-        </main>
-        
     </div>
-</div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MÉXICO ESCONDIDO.</p>
+        </div>
+    </footer>
     <script src="js/pronostico.js"></script>
     <script src="js/preloader.js"></script>
 </body>
+
 </html>
