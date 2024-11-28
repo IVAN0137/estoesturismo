@@ -1,15 +1,13 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "hotel";
+$servername = "sql210.infinityfree.com";
+$username = "if0_37315282";
+$password = "MAGI020601"; 
+$dbname = "if0_37315282_hoteles";
 
-try {
-    $conn = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo json_encode(['status' => 'error', 'message' => 'Error de conexión: ' . $e->getMessage()]);
-    exit();
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
 }
 
 $id = $_GET['id'];

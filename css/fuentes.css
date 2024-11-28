@@ -1,10 +1,41 @@
 body {
-    font-family: 'rush', sans-serif;
+    font-family: 'bubble', sans-serif;
     
 }
 @font-face {
-    font-family: 'rush';
-    src: url('/fonts/rush.ttf') format('truetype'); /* Ajusta la ruta según tu proyecto */
+    font-family: 'oceansolid';
+    src: url('/fonts/OceanSolid.otf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'scarydemo';
+    src: url('/fonts/scarydemo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'rimba';
+    src: url('/fonts/Rimba.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'dashi' ;
+    src: url('/fonts/Dashing.ttf')format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'bubble';
+    src: url('/fonts/bubble.otf')format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'avada';
+    src: url('/fonts/AVADA.ttf')format('truetype');
     font-weight: normal;
     font-style: normal;
 }

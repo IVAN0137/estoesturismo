@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Aquí podrías iniciar una sesión o redirigir a otra página
             session_start();
             $_SESSION['username'] = $username;
-            header("Location: contactanos.html"); // Cambia 'dashboard.php' a la página deseada
+            header("Location: opcionAgg.html"); // Cambia 'dashboard.php' a la página deseada
             exit();
         } else {
             echo "Contraseña incorrecta.";
